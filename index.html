@@ -6,11 +6,59 @@
     <title>Mars Cruz, MPH, CHES | Portfolio & Resume</title>
     <meta name="description" content="Portfolio and resume of Mars Cruz, MPH, CHES — community organizer and public health program manager.">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mars Cruz, MPH, CHES | Portfolio & Resume">
+    <meta property="og:description" content="Community organizer and public health program manager with over eight years of experience in public health advocacy, nonprofit management, and workforce development.">
+    <meta property="og:url" content="https://TriBrigadeMars.github.io">
+    <meta property="og:image" content="https://TriBrigadeMars.github.io/assets/og-image.png">
+    <meta property="og:site_name" content="Mars Cruz">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         html {
             scroll-behavior: smooth;
         }
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mars Cruz",
+      "jobTitle": "Prevention, Education, and Outreach (PEO) Coordinator",
+      "email": "mailto:nalcs.mika@gmail.com",
+      "telephone": "+1-559-288-3725",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Denver",
+        "addressRegion": "CO"
+      },
+      "url": "https://TriBrigadeMars.github.io",
+      "sameAs": [
+        "https://www.linkedin.com/in/mars-cruz-6099b930a/",
+        "https://github.com/TriBrigadeMars"
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "California State University San Marcos" },
+        { "@type": "CollegeOrUniversity", "name": "California State University Fresno" }
+      ],
+      "knowsAbout": ["Public Health", "Program Management", "Community Organizing", "Title IX Compliance", "Data Analysis"]
+    }
+    </script>
 </head>
 <body class="bg-white text-gray-900 font-sans antialiased">
 
@@ -141,14 +189,24 @@
         <section id="projects" class="mb-20" aria-labelledby="projects-heading">
             <h2 id="projects-heading" class="text-2xl font-bold mb-8 border-b pb-2">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Add project cards here. Example:
                 <div class="border rounded-lg p-6 bg-gray-50">
-                    <h3 class="text-xl font-bold mb-2">Project Name</h3>
-                    <p class="text-gray-700 mb-4">Short description of the project, the problem it solved, and the tech used.</p>
-                    <a href="#" class="text-blue-600 font-medium underline">View on GitHub</a>
+                    <h3 class="text-xl font-bold mb-2">Resume Rewriter</h3>
+                    <p class="text-gray-700 mb-4">A Windows desktop app that reviews a resume against a job application and uses a local AI model (via Ollama) to suggest targeted rewrites, keeping your data private.</p>
+                    <p class="text-sm text-gray-500 mb-4">Electron &middot; JavaScript &middot; Ollama</p>
+                    <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 font-medium underline">View on GitHub</a>
                 </div>
-                -->
-                <p class="text-gray-600">Projects coming soon.</p>
+                <div class="border rounded-lg p-6 bg-gray-50">
+                    <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                    <p class="text-gray-700 mb-4">This site — a minimal, WCAG-accessible portfolio and resume hosted on GitHub Pages, built with a real Tailwind CSS build step.</p>
+                    <p class="text-sm text-gray-500 mb-4">Tailwind CSS &middot; HTML &middot; GitHub Pages</p>
+                    <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 font-medium underline">View on GitHub</a>
+                </div>
+                <div class="border rounded-lg p-6 bg-gray-50">
+                    <h3 class="text-xl font-bold mb-2">WordPress Docker Deployment</h3>
+                    <p class="text-gray-700 mb-4">Containerized WordPress environment orchestrated with Docker Compose for local development and testing.</p>
+                    <p class="text-sm text-gray-500 mb-4">Docker &middot; Docker Compose &middot; WordPress</p>
+                    <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 font-medium underline">View on GitHub</a>
+                </div>
             </div>
         </section>
 
@@ -205,6 +263,7 @@
         <section id="contact" class="mb-20" aria-labelledby="contact-heading">
             <h2 id="contact-heading" class="text-2xl font-bold mb-8 border-b pb-2">Contact</h2>
             <p class="text-gray-700 mb-6">I'm currently open to new opportunities. Feel free to reach out via email, phone, or connect with me on LinkedIn.</p>
+
             <ul class="space-y-4">
                 <li><strong>Email:</strong> <a href="mailto:nalcs.mika@gmail.com" class="text-blue-600 underline">nalcs.mika@gmail.com</a></li>
                 <li><strong>Phone:</strong> <a href="tel:+15592883725" class="text-blue-600 underline">559-288-3725</a></li>
