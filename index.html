@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mars Cruz, MPH, CHES | Portfolio & Resume</title>
-    <meta name="description" content="Portfolio and resume of Mars Cruz, MPH, CHES — community organizer and public health program manager.">
+    <title>Mars Cruz, MPH, CHES | Public Health & AI Portfolio</title>
+    <meta name="description" content="Portfolio and resume of Mars Cruz, MPH, CHES — Public Health Program Manager & Health Informatics Enthusiast.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <meta name="theme-color" content="#2563eb">
 
     <!-- Open Graph / social preview -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Mars Cruz, MPH, CHES | Portfolio & Resume">
-    <meta property="og:description" content="Community organizer and public health program manager with over eight years of experience in public health advocacy, nonprofit management, and workforce development.">
+    <meta property="og:title" content="Mars Cruz, MPH, CHES | Public Health & AI Portfolio">
+    <meta property="og:description" content="Public Health Program Manager & Health Informatics Enthusiast with 8+ years of experience across Title VII/IX compliance, community health analytics, and privacy-first local AI tooling.">
     <meta property="og:url" content="https://TriBrigadeMars.github.io">
     <meta property="og:image" content="https://TriBrigadeMars.github.io/assets/og-image.png">
     <meta property="og:site_name" content="Mars Cruz">
@@ -20,10 +23,7 @@
 
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
         @media (prefers-reduced-motion: reduce) {
             html {
@@ -36,6 +36,15 @@
             }
         }
     </style>
+
+    <script>
+        // Init theme before render to prevent flash
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 
     <script type="application/ld+json">
     {
@@ -59,27 +68,42 @@
         { "@type": "CollegeOrUniversity", "name": "California State University San Marcos" },
         { "@type": "CollegeOrUniversity", "name": "California State University Fresno" }
       ],
-      "knowsAbout": ["Public Health", "Program Management", "Community Organizing", "Title IX Compliance", "Data Analysis"]
+      "knowsAbout": ["Public Health", "Health Informatics", "Title IX Compliance", "Program Management", "Local AI Models", "Data Analysis", "SQL", "Tableau", "R"]
     }
     </script>
 </head>
-<body class="bg-white text-gray-900 font-sans antialiased">
+<body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 font-sans antialiased transition-colors duration-200">
 
     <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white p-2 z-50">Skip to main content</a>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white p-2 z-50 rounded shadow-md">Skip to main content</a>
 
     <!-- Navigation -->
-    <nav class="border-b border-gray-200 sticky top-0 bg-white z-40" aria-label="Primary">
+    <nav class="border-b border-zinc-200 dark:border-zinc-800 sticky top-0 bg-white/90 dark:bg-zinc-950/90 backdrop-blur z-40" aria-label="Primary">
         <div class="max-w-4xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-2">
-            <a href="#about" class="text-xl font-bold tracking-tight">Mars Cruz</a>
-            <ul class="flex flex-wrap space-x-6 text-sm font-medium">
-                <li><a href="#about" class="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">About</a></li>
-                <li><a href="#experience" class="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Experience</a></li>
-                <li><a href="#projects" class="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Projects</a></li>
-                <li><a href="#skills" class="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Skills</a></li>
-                <li><a href="#education" class="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Education</a></li>
-                <li><a href="#contact" class="hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Contact</a></li>
-            </ul>
+            <a href="#about" class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white flex items-center gap-2">
+                <span>Mars Cruz</span>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300">MPH, CHES</span>
+            </a>
+            <div class="flex items-center gap-6">
+                <ul class="flex flex-wrap space-x-6 text-sm font-medium">
+                    <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">About</a></li>
+                    <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Projects</a></li>
+                    <li><a href="#experience" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Experience</a></li>
+                    <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Skills</a></li>
+                    <li><a href="#education" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Education</a></li>
+                    <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 rounded">Contact</a></li>
+                </ul>
+
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" type="button" class="p-2 rounded-lg text-zinc-600 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-blue-600" aria-label="Toggle dark mode">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -87,200 +111,438 @@
 
         <!-- Hero / About Section -->
         <section id="about" class="mb-20" aria-labelledby="about-heading">
-            <h1 id="about-heading" class="text-4xl md:text-5xl font-extrabold mb-2">Mars Cruz, MPH, CHES</h1>
-            <p class="text-lg text-gray-600 mb-6">Denver, CO (Remote) &middot; 559-288-3725 &middot; nalcs.mika@gmail.com</p>
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                Community organizer and public health program manager with over eight years of experience in
-                public health advocacy, nonprofit management, and workforce development. I bring excellent
-                management and administration of compliance, program, and technical operations.
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950/70 dark:text-blue-300 border border-blue-200 dark:border-blue-800 mb-4">
+                <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                Public Health &amp; Applied Informatics
+            </div>
+            <h1 id="about-heading" class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3 text-zinc-900 dark:text-white">Mars Cruz, MPH, CHES</h1>
+            <p class="text-xl text-blue-600 dark:text-blue-400 font-medium mb-3">Public Health Program Manager &middot; Compliance Specialist &middot; Health Informatics Enthusiast</p>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-6 flex flex-wrap items-center gap-x-4 gap-y-1">
+                <span>📍 Denver, CO (Remote)</span>
+                <span>📞 <a href="tel:+15592883725" class="hover:underline">559-288-3725</a></span>
+                <span>✉️ <a href="mailto:nalcs.mika@gmail.com" class="hover:underline">nalcs.mika@gmail.com</a></span>
             </p>
-            <div class="flex flex-wrap space-x-4">
-                <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition">Get in Touch</a>
-                <a href="assets/resume.pdf" target="_blank" rel="noopener" class="border border-gray-300 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition">View Resume (PDF)</a>
+            <p class="text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed mb-8">
+                Public health program manager and community organizer with over eight years of experience driving public health advocacy, institutional compliance, and workforce development. I combine rigorous compliance administration (Title VII, Title IX, ADA) with modern data analytics (SQL, Tableau, R) and practical AI engineering to make institutional systems transparent, accessible, and high-impact.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition shadow-sm">Explore Projects &amp; Demos</a>
+                <a href="assets/resume.pdf" target="_blank" rel="noopener" class="border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 px-6 py-3 rounded-lg font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition">View Resume (PDF)</a>
+                <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="border border-zinc-300 dark:border-zinc-700 text-zinc-800 dark:text-zinc-200 px-4 py-3 rounded-lg font-medium hover:bg-zinc-50 dark:hover:bg-zinc-900 transition flex items-center gap-2">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span>GitHub</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Projects & Case Studies Section -->
+        <section id="projects" class="mb-20" aria-labelledby="projects-heading">
+            <div class="flex flex-wrap items-end justify-between border-b border-zinc-200 dark:border-zinc-800 pb-3 mb-8">
+                <div>
+                    <h2 id="projects-heading" class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-white">Featured Projects &amp; Case Studies</h2>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Bridging public health operations, compliance data analysis, and software engineering.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Project 1: Resume Tailor / Rewriter -->
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50 hover:border-blue-500 dark:hover:border-blue-500 transition shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-blue-100 text-blue-800 dark:bg-blue-900/60 dark:text-blue-300">Local AI / LLM Tooling</span>
+                            <span class="text-xs text-zinc-500">Active</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">Resume Tailor (Local AI Rewriter)</h3>
+                        <p class="text-zinc-700 dark:text-zinc-300 text-sm mb-4 leading-relaxed">
+                            A Windows desktop application designed for privacy-conscious job seekers. Automatically compares resumes against target job postings and prompts a local Ollama LLM instance for surgical rewrite suggestions—ensuring zero sensitive career data is transmitted to cloud APIs.
+                        </p>
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Key Problem &amp; Architecture:</p>
+                            <p class="text-xs text-zinc-600 dark:text-zinc-400">Offline inference &bull; Contextual prompt engineering &bull; Zero external data leakage</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Electron</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">JavaScript</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Ollama</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Local LLMs</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-4 text-sm font-medium">
+                        <a href="https://github.com/TriBrigadeMars/resume-tailor" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1.5">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            View Source Code &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Title VII & Institutional Compliance Analytics -->
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50 hover:border-blue-500 dark:hover:border-blue-500 transition shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300">Public Health Data Analytics</span>
+                            <span class="text-xs text-zinc-500">University R1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">Title VII Compliance Analytics &amp; Reporting</h3>
+                        <p class="text-zinc-700 dark:text-zinc-300 text-sm mb-4 leading-relaxed">
+                            Data analytics initiative at the University of Colorado (22,000+ population) extracting quantitative employee records via SQL to evaluate institutional training compliance, identify outreach gaps, and deliver interactive Tableau dashboards for university executive leadership.
+                        </p>
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Outcome &amp; Impact:</p>
+                            <p class="text-xs text-zinc-600 dark:text-zinc-400">Automated recurring data pipelines &bull; Direct compliance visibility across academic departments</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">SQL</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Tableau</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Title VII / IX</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Data Pipeline</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-4 text-sm font-medium">
+                        <a href="#experience" class="text-blue-600 dark:text-blue-400 hover:underline">
+                            Read Experience Details &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Android Kiosk Lock Task App -->
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50 hover:border-blue-500 dark:hover:border-blue-500 transition shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-purple-100 text-purple-800 dark:bg-purple-900/60 dark:text-purple-300">Device Policy &amp; Security</span>
+                            <span class="text-xs text-zinc-500">Open Source</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">Android Kiosk Lock Task App</h3>
+                        <p class="text-zinc-700 dark:text-zinc-300 text-sm mb-4 leading-relaxed">
+                            Dedicated Android application utilizing Android enterprise lock task mode to deploy secure, dedicated-use kiosk interfaces. Ideal for community health intake kiosks, clinical screening tablets, and public survey stations.
+                        </p>
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Application:</p>
+                            <p class="text-xs text-zinc-600 dark:text-zinc-400">Sandboxed field devices &bull; Hardware lock down &bull; Tamper prevention</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Android SDK</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Kotlin / Java</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">LockTask API</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-4 text-sm font-medium">
+                        <a href="https://github.com/TriBrigadeMars/Android-Kiosk-Lock-Task-App" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1.5">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            View Repository &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Hermes Profile Sync -->
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50 hover:border-blue-500 dark:hover:border-blue-500 transition shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-amber-100 text-amber-800 dark:bg-amber-900/60 dark:text-amber-300">Agent Infrastructure</span>
+                            <span class="text-xs text-zinc-500">Open Source</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white mb-2">Hermes Agent Profile Sync</h3>
+                        <p class="text-zinc-700 dark:text-zinc-300 text-sm mb-4 leading-relaxed">
+                            Cross-machine profile synchronization tool for autonomous AI agents, ensuring deterministic environment configs, skill configurations, and agent identity consistency across isolated development environments.
+                        </p>
+                        <div class="mb-4">
+                            <p class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider mb-2">Focus:</p>
+                            <p class="text-xs text-zinc-600 dark:text-zinc-400">Agentic orchestration &bull; Config state reproducibility &bull; Multi-machine synchronization</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mb-6">
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">AI Agents</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Automation</span>
+                            <span class="bg-zinc-200/70 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs px-2.5 py-1 rounded font-mono">Shell</span>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center gap-4 text-sm font-medium">
+                        <a href="https://github.com/TriBrigadeMars/hermes-profile-sync" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1.5">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            View Repository &rarr;
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!-- Experience Section -->
         <section id="experience" class="mb-20" aria-labelledby="experience-heading">
-            <h2 id="experience-heading" class="text-2xl font-bold mb-8 border-b pb-2">Work Experience</h2>
-            <div class="space-y-10">
+            <h2 id="experience-heading" class="text-2xl font-bold tracking-tight mb-8 border-b border-zinc-200 dark:border-zinc-800 pb-2 text-zinc-900 dark:text-white">Work Experience</h2>
+            <div class="space-y-12">
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Prevention, Education, and Outreach (PEO) Coordinator</h3>
-                    <p class="text-sm text-gray-500 mb-2">University of Colorado &middot; September 2024 — Present &middot; Full-Time 40 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <!-- Role 1 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Prevention, Education, and Outreach (PEO) Coordinator</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">September 2024 — Present</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">University of Colorado &middot; Full-Time (40 hr/week) &middot; Denver, CO</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
                         <li>Design and deliver virtual training and seminars on Title VII, Title IX, and ADA compliance for faculty, students, and employees for an R1 research institution of over 22,000 community members.</li>
-                        <li>Coordinate statewide conferences to share best practices and strategies on Title IX compliance.</li>
-                        <li>Serve as a resource for campus leadership and medical providers, translating complex policy into accessible educational content for diverse audiences.</li>
+                        <li>Coordinate statewide conferences to share best practices and evidence-based strategies on Title IX compliance.</li>
+                        <li>Serve as a technical resource for campus leadership and medical providers, translating complex statutory policy into accessible educational curricula.</li>
                         <li>Utilize Tableau and SQL queries to develop Title VII compliance reports from quantitative employee data.</li>
-                        <li>Conduct employee onboarding and compliance trainings of over 150+ attendees.</li>
+                        <li>Conduct employee onboarding and compliance trainings for cohorts of 150+ attendees.</li>
                     </ul>
                 </div>
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Political Outreach Consultant</h3>
-                    <p class="text-sm text-gray-500 mb-2">Valley Forward &middot; July 2024 — September 2024 &middot; Part-Time 24 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <!-- Role 2 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Political Outreach Consultant</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">July 2024 — September 2024</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">Valley Forward &middot; Part-Time (24 hr/week)</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
                         <li>Informed and engaged community members on local politics; conducted candidate perception surveys.</li>
-                        <li>Organized routes for maximum outreach effectiveness using the PDI data.</li>
-                        <li>Collaborated with the campaign team to implement targeted strategies, resulting in increased voter awareness and support.</li>
+                        <li>Organized canvassing routes for maximum outreach effectiveness leveraging PDI voter data analytics.</li>
+                        <li>Collaborated with campaign leadership to implement targeted field strategies, driving voter awareness and engagement.</li>
                     </ul>
                 </div>
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Senior Program Coordinator</h3>
-                    <p class="text-sm text-gray-500 mb-2">Youth Leadership Institute &middot; October 2023 — May 2024 &middot; Full-Time 40 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Co-facilitated three youth participatory action research electives, engaging 60-70 students per class in critical thinking and leadership development.</li>
+                <!-- Role 3 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Senior Program Coordinator</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">October 2023 — May 2024</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">Youth Leadership Institute &middot; Full-Time (40 hr/week)</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
+                        <li>Co-facilitated three youth participatory action research electives, engaging 60–70 students per class in critical thinking and leadership development.</li>
                         <li>Acted as Project Director for the California Department of Public Health funded program "Mobilizing Youth to Nix Tobacco" (MYNT), managing end-to-end grant evaluation and reporting.</li>
-                        <li>Developed position papers, talking points, presentations, and consultation responses for tobacco prevention engagement in the State of California.</li>
-                        <li>Successfully secured a $750,000 Sierra San Joaquin Jobs (S2J2) grant through strategic writing and coalition building with local stakeholders.</li>
-                        <li>Engaged with development, communications, and executive teams on advancing policy goals in Fresno County and the Central Valley region.</li>
-                        <li>Led one Senior Program Coordinator to implement tobacco education initiatives across Fresno and Madera County, fostering collaboration between youth and community leaders.</li>
+                        <li>Developed position papers, talking points, presentations, and consultation responses for statewide tobacco prevention engagement.</li>
+                        <li>Successfully secured a <strong>$750,000 Sierra San Joaquin Jobs (S2J2) grant</strong> through strategic writing and coalition building with regional stakeholders.</li>
+                        <li>Engaged with development, communications, and executive teams on advancing public health policy goals in Fresno County and the Central Valley.</li>
+                        <li>Managed Senior Program Coordinators to deploy tobacco education initiatives across Fresno and Madera Counties.</li>
                     </ul>
                 </div>
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Community Health Worker</h3>
-                    <p class="text-sm text-gray-500 mb-2">Centro La Familia Advocacy Services &middot; March 2023 — October 2023 &middot; Full-Time 36.5 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Supported a client roster of 15-25 individuals, navigating public benefits, substance use prevention, and housing programs to ensure access for vulnerable populations.</li>
-                        <li>Developed monthly reports including case summaries and care plans, utilizing data to track progress and advocate for resource allocation.</li>
+                <!-- Role 4 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Community Health Worker</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">March 2023 — October 2023</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">Centro La Familia Advocacy Services &middot; Full-Time (36.5 hr/week)</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
+                        <li>Supported an active client roster of 15–25 individuals, navigating public benefits, substance use prevention, and housing programs for vulnerable populations.</li>
+                        <li>Developed monthly reporting pipelines including case summaries and individualized care plans, tracking progress metrics to advocate for local resource allocation.</li>
                     </ul>
                 </div>
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Health Education Specialist</h3>
-                    <p class="text-sm text-gray-500 mb-2">Merced County Department of Public Health &middot; January 2022 — February 2023 &middot; Full-Time 40 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Organized and coordinated public health education activities for the Local Oral Health Program (LOHP), maintaining a coalition between the Health Department and Advisory Committee.</li>
-                        <li>Recruited 10-15 stakeholders for oral health presentations, leveraging community networks to drive engagement.</li>
-                        <li>Utilized Microsoft Excel, VLOOKUP, and INDEX functions to create visualizations for open-source Medicaid funding utilization in Merced County.</li>
+                <!-- Role 5 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Health Education Specialist</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">January 2022 — February 2023</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">Merced County Department of Public Health &middot; Full-Time (40 hr/week)</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
+                        <li>Organized and coordinated public health education initiatives for the Local Oral Health Program (LOHP), sustaining coalitions between county health leadership and advisory committees.</li>
+                        <li>Recruited 10–15 key community stakeholders per presentation cycle to drive program engagement.</li>
+                        <li>Built custom Microsoft Excel visualizations and data tables using advanced formulas (VLOOKUP, INDEX/MATCH) to audit and track open-source Medicaid funding utilization in Merced County.</li>
                     </ul>
                 </div>
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Communicable Disease Investigator</h3>
-                    <p class="text-sm text-gray-500 mb-2">Fresno County Department of Public Health &middot; October 2020 — December 2021 &middot; Full-Time 40 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Conducted screening interviews among liaisons to ascertain personal history and infection sources, maintaining a caseload of 25-60 school districts.</li>
-                        <li>Provided isolation and quarantine guidance for school-based faculty and health professionals during the COVID-19 pandemic.</li>
+                <!-- Role 6 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Communicable Disease Investigator</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">October 2020 — December 2021</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">Fresno County Department of Public Health &middot; Full-Time (40 hr/week)</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
+                        <li>Conducted rapid epidemiological screening interviews to trace personal infection sources, managing a liaison caseload of 25–60 school districts.</li>
+                        <li>Delivered clinical isolation and quarantine guidance for school-based faculty, administrators, and health professionals during emergency COVID-19 pandemic response.</li>
                     </ul>
                 </div>
 
-                <div class="border-l-2 border-gray-100 pl-6 relative">
-                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full" aria-hidden="true"></div>
-                    <h3 class="text-xl font-bold">Program Coordinator</h3>
-                    <p class="text-sm text-gray-500 mb-2">Fresno Barrios Unidos &middot; August 2017 — October 2020 &middot; Full-Time 40 hr/week</p>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Coordinated youth development and gang violence prevention programs (Men with Heart &amp; Joven Noble), recruiting over 20 youth per cohort.</li>
-                        <li>Served as a liaison with City of Fresno councilmembers and Parks and Recreation staff to advocate for additional funding ($500k+) for wireless networks and bus rapid transit.</li>
-                        <li>Utilized Apricot CRM system to track funding streams, donors, and service delivery for youth clients.</li>
+                <!-- Role 7 -->
+                <div class="border-l-2 border-zinc-200 dark:border-zinc-800 pl-6 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-blue-600 rounded-full border-4 border-white dark:border-zinc-950" aria-hidden="true"></div>
+                    <div class="flex flex-wrap items-baseline justify-between gap-1 mb-1">
+                        <h3 class="text-xl font-bold text-zinc-900 dark:text-white">Program Coordinator</h3>
+                        <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300">August 2017 — October 2020</span>
+                    </div>
+                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4 font-medium">Fresno Barrios Unidos &middot; Full-Time (40 hr/week)</p>
+                    <ul class="list-disc list-outside ml-4 text-zinc-700 dark:text-zinc-300 space-y-2 text-sm leading-relaxed">
+                        <li>Coordinated youth development and gang violence prevention programs (Men with Heart &amp; Joven Noble), enrolling over 20 youth per cohort.</li>
+                        <li>Served as community liaison with City of Fresno councilmembers and municipal staff to advocate for <strong>$500k+ in capital funding</strong> for public wireless networks and bus rapid transit.</li>
+                        <li>Administered Apricot CRM system to track funding streams, foundation donors, and longitudinal service delivery.</li>
                     </ul>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="mb-20" aria-labelledby="projects-heading">
-            <h2 id="projects-heading" class="text-2xl font-bold mb-8 border-b pb-2">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="border rounded-lg p-6 bg-gray-50">
-                    <h3 class="text-xl font-bold mb-2">Resume Rewriter</h3>
-                    <p class="text-gray-700 mb-4">A Windows desktop app that reviews a resume against a job application and uses a local AI model (via Ollama) to suggest targeted rewrites, keeping your data private.</p>
-                    <p class="text-sm text-gray-500 mb-4">Electron &middot; JavaScript &middot; Ollama</p>
-                    <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 font-medium underline">View on GitHub</a>
-                </div>
-                <div class="border rounded-lg p-6 bg-gray-50">
-                    <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
-                    <p class="text-gray-700 mb-4">This site — a minimal, WCAG-accessible portfolio and resume hosted on GitHub Pages, built with a real Tailwind CSS build step.</p>
-                    <p class="text-sm text-gray-500 mb-4">Tailwind CSS &middot; HTML &middot; GitHub Pages</p>
-                    <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 font-medium underline">View on GitHub</a>
-                </div>
-                <div class="border rounded-lg p-6 bg-gray-50">
-                    <h3 class="text-xl font-bold mb-2">WordPress Docker Deployment</h3>
-                    <p class="text-gray-700 mb-4">Containerized WordPress environment orchestrated with Docker Compose for local development and testing.</p>
-                    <p class="text-sm text-gray-500 mb-4">Docker &middot; Docker Compose &middot; WordPress</p>
-                    <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 font-medium underline">View on GitHub</a>
-                </div>
             </div>
         </section>
 
         <!-- Skills Section -->
         <section id="skills" class="mb-20" aria-labelledby="skills-heading">
-            <h2 id="skills-heading" class="text-2xl font-bold mb-8 border-b pb-2">Technical Skills</h2>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="font-semibold mb-2">Digital Facilitation</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Zoom Meeting &amp; Webinar</span>
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Microsoft Teams</span>
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Canva</span>
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Adobe Creative Cloud</span>
+            <h2 id="skills-heading" class="text-2xl font-bold tracking-tight mb-8 border-b border-zinc-200 dark:border-zinc-800 pb-2 text-zinc-900 dark:text-white">Technical &amp; Domain Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 bg-zinc-50/50 dark:bg-zinc-900/50">
+                    <h3 class="font-bold text-zinc-900 dark:text-white text-base mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                        Data &amp; Health Informatics
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">SQL</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Tableau</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">R</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Excel &amp; VBA</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Atlas.ti</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">PDI Analytics</span>
                     </div>
                 </div>
-                <div>
-                    <h3 class="font-semibold mb-2">Data Analysis</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">R</span>
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Atlas.ti</span>
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Microsoft Excel &amp; VBA Macros</span>
+
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 bg-zinc-50/50 dark:bg-zinc-900/50">
+                    <h3 class="font-bold text-zinc-900 dark:text-white text-base mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-purple-600"></span>
+                        Software &amp; AI Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Ollama &amp; Local LLMs</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Electron</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">JavaScript</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Docker / Compose</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Git &amp; GitHub</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Tailwind CSS</span>
                     </div>
                 </div>
-                <div>
-                    <h3 class="font-semibold mb-2">Administrative Management</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Percipio LMS</span>
+
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 bg-zinc-50/50 dark:bg-zinc-900/50">
+                    <h3 class="font-bold text-zinc-900 dark:text-white text-base mb-3 flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                        Compliance &amp; Leadership
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Title VII &amp; Title IX</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">ADA Compliance</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Grant Writing ($750k+)</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">CHES Certification</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Apricot CRM</span>
+                        <span class="bg-white dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 px-3 py-1.5 rounded-lg text-xs font-medium">Percipio LMS</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education & Credentials Section -->
         <section id="education" class="mb-20" aria-labelledby="education-heading">
-            <h2 id="education-heading" class="text-2xl font-bold mb-8 border-b pb-2">Education &amp; Credentials</h2>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-lg font-bold">Master's Degree of Public Health — Community Health</h3>
-                    <p class="text-gray-600">California State University San Marcos</p>
+            <h2 id="education-heading" class="text-2xl font-bold tracking-tight mb-8 border-b border-zinc-200 dark:border-zinc-800 pb-2 text-zinc-900 dark:text-white">Education &amp; Credentials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50">
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 mb-2 inline-block">Graduate Degree</span>
+                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Master of Public Health (MPH)</h3>
+                    <p class="text-sm text-blue-600 dark:text-blue-400 font-medium mb-1">Community Health</p>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">California State University San Marcos</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">Bachelor's Degree of Science — Public Health</h3>
-                    <p class="text-gray-600">California State University Fresno</p>
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50">
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 mb-2 inline-block">Undergraduate Degree</span>
+                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Bachelor of Science (BS)</h3>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400 font-medium mb-1">Public Health</p>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">California State University Fresno</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">Certified Health Education Specialist | ID 34522</h3>
-                    <p class="text-gray-600">National Commission for Health Education Credentialing</p>
+                <div class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 bg-zinc-50/50 dark:bg-zinc-900/50">
+                    <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300 mb-2 inline-block">National Credential</span>
+                    <h3 class="text-lg font-bold text-zinc-900 dark:text-white mb-1">Certified Health Education Specialist</h3>
+                    <p class="text-sm text-emerald-600 dark:text-emerald-400 font-medium mb-1">CHES &middot; ID 34522</p>
+                    <p class="text-xs text-zinc-500 dark:text-zinc-400">NCHEC</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="mb-20" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" class="text-2xl font-bold mb-8 border-b pb-2">Contact</h2>
-            <p class="text-gray-700 mb-6">I'm currently open to new opportunities. Feel free to reach out via email, phone, or connect with me on LinkedIn.</p>
+            <h2 id="contact-heading" class="text-2xl font-bold tracking-tight mb-8 border-b border-zinc-200 dark:border-zinc-800 pb-2 text-zinc-900 dark:text-white">Get in Touch</h2>
+            <p class="text-zinc-700 dark:text-zinc-300 mb-8 leading-relaxed max-w-2xl">
+                I am open to discussions regarding public health management, health informatics leadership, data analytics initiatives, and collaborations on applied AI solutions. Feel free to connect via any of the channels below.
+            </p>
 
-            <ul class="space-y-4">
-                <li><strong>Email:</strong> <a href="mailto:nalcs.mika@gmail.com" class="text-blue-600 underline">nalcs.mika@gmail.com</a></li>
-                <li><strong>Phone:</strong> <a href="tel:+15592883725" class="text-blue-600 underline">559-288-3725</a></li>
-                <li><strong>Location:</strong> Denver, CO (Remote)</li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mars-cruz-6099b930a/" target="_blank" rel="noopener" class="text-blue-600 underline">linkedin.com/in/mars-cruz-6099b930a</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="text-blue-600 underline">github.com/TriBrigadeMars</a></li>
-            </ul>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="mailto:nalcs.mika@gmail.com" class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex items-center gap-3 hover:border-blue-500 dark:hover:border-blue-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">Direct Email</p>
+                        <p class="text-sm font-semibold text-zinc-900 dark:text-white">nalcs.mika@gmail.com</p>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/mars-cruz-6099b930a/" target="_blank" rel="noopener" class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex items-center gap-3 hover:border-blue-500 dark:hover:border-blue-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">LinkedIn Profile</p>
+                        <p class="text-sm font-semibold text-zinc-900 dark:text-white">mars-cruz-6099b930a</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/TriBrigadeMars" target="_blank" rel="noopener" class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex items-center gap-3 hover:border-blue-500 dark:hover:border-blue-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-zinc-100 dark:bg-zinc-800 flex items-center justify-center text-zinc-800 dark:text-zinc-200 group-hover:scale-110 transition">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">GitHub</p>
+                        <p class="text-sm font-semibold text-zinc-900 dark:text-white">TriBrigadeMars</p>
+                    </div>
+                </a>
+
+                <a href="tel:+15592883725" class="border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex items-center gap-3 hover:border-blue-500 dark:hover:border-blue-500 transition group">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-xs text-zinc-500 dark:text-zinc-400">Phone</p>
+                        <p class="text-sm font-semibold text-zinc-900 dark:text-white">559-288-3725</p>
+                    </div>
+                </a>
+            </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-50 py-8 text-center text-sm text-gray-600">
-        <p>&copy; 2026 Mars Cruz. Built with Tailwind CSS.</p>
+    <footer class="border-t border-zinc-200 dark:border-zinc-800 py-8 text-center text-sm text-zinc-500 dark:text-zinc-400">
+        <p>&copy; 2026 Mars Cruz, MPH, CHES. Built with Tailwind CSS and hosted on GitHub Pages.</p>
     </footer>
+
+    <!-- Theme toggle logic -->
+    <script>
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleBtn = document.getElementById('theme-toggle');
+
+        function updateToggleIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIcon.classList.add('hidden');
+            }
+        }
+
+        updateToggleIcons();
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateToggleIcons();
+        });
+    </script>
 
 </body>
 </html>
