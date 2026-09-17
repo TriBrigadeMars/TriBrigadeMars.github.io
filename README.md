@@ -42,3 +42,29 @@ This folder is the root of the repository `TriBrigadeMars.github.io`.
 - `src/input.css` — Tailwind source styles
 - `tailwind.config.js` — Tailwind configuration
 - `package.json` — build scripts and dependencies
+
+## Design system (Route B: CU Gold + Tech Modern)
+
+The palette and type follow the CU Denver Brand Book 2023, adapted for a personal
+(not institutional) site.
+
+- **CU Gold `#CFB87C`** is the primary accent. Gold is never used as a text colour on
+  a tinted surface; `gold-600 #8D7334` ("Accessible Gold") is used for gold text and
+  only on white, per the brand accessibility rule.
+- **Centennial Teal `#28939D`** is the secondary accent, kept under ~20% of the design
+  and never used as a plain colour field.
+- **City Heights Sandstone `#F1EAD8`** is the light alternate surface.
+- **Skyline Slate `#244C5A`** and its shades carry the dark-mode surfaces.
+- **Helvetica Neue Bold Condensed Oblique** (Arial / Arial Narrow as approved
+  substitutes) drives `h1`/`h2`, set in all caps via the `h1, h2` rule in `index.html`.
+- The `.angle-slash` component in `src/input.css` renders the brand's 78-degree
+  "dynamic angle" as a section marker. The triangle mark is used once, as a visual
+  compass in the nav, because the brand forbids repeating it in a row or pattern.
+
+**Intentional deviation:** the brand states CU Black is never a background colour. The
+dark theme deliberately uses deep slate (`ink-950` / `skyline-800`) instead of pure
+black, which reads as brand-adjacent while avoiding a flat black surface. The light
+theme follows the brand rules directly.
+
+Every text/background pair in the light and dark themes was verified against
+WCAG 2.0 AA (4.5:1 normal text, 3:1 large text).
