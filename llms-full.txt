@@ -15,69 +15,69 @@ Public Health & Applied Informatics
 
 Public Health Educator · Program Implementation & Evaluation · Community Partnerships
 
-📍 Denver, CO (Remote) ✉️ nalcs.mika@gmail.com
+📍 Denver, CO (Remote & Hybrid) ✉️ nalcs.mika@gmail.com
 
-Public health program manager and community organizer with over eight years of experience in public health advocacy, nonprofit management, and workforce development. I pair compliance education (Title VII, Title IX, ADA) with modern data analytics (SQL, Tableau) and practical AI tools to make institutional systems transparent, accessible, and high-impact.
+Public health educator and program coordinator with over eight years of experience bridging regulatory compliance, accessible health communication, and cross-functional program operations. I translate complex statutory and clinical requirements (Title VII, Title IX, ADA/WCAG) into plain-language training curricula, pair workforce and program evaluation with SQL, Tableau, and advanced Excel analytics, and build local-first tools that protect sensitive data.
 
 Explore Projects & Demos [View Resume (PDF)](assets/resume.pdf) [GitHub](https://github.com/TriBrigadeMars)
 
 ### Featured Projects & Case Studies
 
-Prevention education, program implementation, and practical tools that keep sensitive work local.
+Compliance analytics, plain-language policy translation, and privacy-first operational work samples.
 
-Public Health Data Analytics University R1
+Compliance & Workforce Analytics University R1
 
 #### Title VII Compliance Analytics & Reporting
 
-Data analytics initiative at the University of Colorado (22,000+ population) extracting quantitative employee records via SQL to evaluate institutional training compliance, identify outreach gaps, and deliver interactive Tableau dashboards for university executive leadership.
+Workforce compliance and evaluation initiative at the University of Colorado (22,000+ community members) extracting quantitative teammate records via SQL to audit training adherence, identify outreach gaps across academic and clinical units, and deliver interactive Tableau dashboards for executive leadership.
 
 Outcome & Impact:
 
-Automated recurring data pipelines • Direct compliance visibility across academic departments
+Recurring SQL reporting pipelines • Audit-ready compliance visibility across institutional lanes
 
-SQL Tableau Title VII / IX Data Pipeline
+SQL Tableau Title VII / IX Compliance Reporting
 
 Read Experience Details →
 
-Local AI / LLM Tooling Work Sample
+Data Governance & Plain Language Work Sample
 
 #### Resume Tailor (Local AI Rewriter)
 
-A Windows desktop application designed for privacy-conscious job seekers. Automatically compares resumes against target job postings and prompts a local Ollama LLM instance for surgical rewrite suggestions—ensuring zero sensitive career data is transmitted to cloud APIs.
+Privacy-first desktop application that compares structured documents against target competency requirements using a local Ollama LLM instance. Models how regulated organizations can adapt complex policy or communications copy into plain-language standards with zero sensitive data transmitted to external cloud APIs.
 
 Key Problem & Architecture:
 
-Offline inference • Contextual prompt engineering • Zero external data leakage
+Offline inference • Plain-language alignment • Zero external data leakage
 
-Electron JavaScript Ollama Local LLMs
+Data Governance Plain Language Ollama Local LLMs
 
 [View Source Code →](https://github.com/TriBrigadeMars/resume-tailor)
 
-Device Policy & Security Work Sample
+Clinical Field & Device Controls Work Sample
 
 #### Android Kiosk Lock Task App
 
-Dedicated Android application utilizing Android enterprise lock task mode to deploy secure, dedicated-use kiosk interfaces. Ideal for community health intake kiosks, clinical screening tablets, and public survey stations.
+Dedicated Android application utilizing enterprise lock-task mode to deploy tamper-resistant, single-purpose kiosk interfaces. Built for community health intake kiosks, outpatient clinical screening tablets, and accessible survey stations where field devices must remain locked to approved workflows.
 
 Application:
 
-Sandboxed field devices • Hardware lock down • Tamper prevention
+Point-of-care field devices • Hardware lockdown • Tamper prevention
 
-Android SDK Kotlin / Java LockTask API
+Android SDK Java LockTask API Clinical Intake
 
 [View Repository →](https://github.com/TriBrigadeMars/Android-Kiosk-Lock-Task-App)
 
-Agent Infrastructure Work Sample
+Workflow Standardization & Auditability Work Sample
 
 #### Hermes Agent Profile Sync
 
-Cross-machine profile synchronization tool for autonomous AI agents, ensuring deterministic environment configs, skill configurations, and agent identity consistency across isolated development environments.
+Cross-environment configuration synchronization utility ensuring deterministic, auditable environment states and reproducible standard operating procedures (SOPs) across isolated workstations.
 
 Focus:
 
-Agentic orchestration • Config state reproducibility • Multi-machine synchronization
+SOP reproducibility • Auditable config state • Cross-environment sync
 
-AI Agents Automation Shell
+Process Standardization Auditability Python
 
 [View Repository →](https://github.com/TriBrigadeMars/hermes-profile-sync)
 
@@ -89,11 +89,11 @@ September 2024 — Present
 
 University of Colorado · Full-Time (40 hr/week) · Denver, CO
 
-- Design and deliver virtual training and seminars on Title VII, Title IX, and ADA compliance for faculty, students, and employees for an R1 research institution of over 22,000 community members.
-- Coordinate statewide conferences to share best practices and evidence-based strategies on Title IX compliance.
-- Serve as a technical resource for campus leadership and medical providers, translating complex statutory policy into accessible educational curricula.
-- Utilize Tableau and SQL queries to develop Title VII compliance reports from quantitative employee data.
-- Conduct employee onboarding and compliance trainings for cohorts of 150+ attendees.
+- Serve as a technical and regulatory resource for campus leadership and medical providers, translating complex statutory mandates (Title VII, Title IX, ADA) into plain-language educational curricula and accessible digital resources.
+- Utilize SQL queries and Tableau dashboards to analyze quantitative employee records and produce recurring Title VII compliance reports for institutional leadership.
+- Design and deliver virtual and hybrid compliance seminars for faculty, students, and teammates across an R1 academic and clinical community of over 22,000 members.
+- Conduct structured teammate onboarding and civil-rights compliance trainings for cohorts of 150+ attendees.
+- Coordinate statewide conferences and cross-functional working groups to align best practices and evidence-based strategies on Title IX compliance.
 
 #### Political Outreach Consultant
 
@@ -101,9 +101,9 @@ July 2024 — September 2024
 
 Valley Forward · Part-Time (24 hr/week)
 
-- Informed and engaged community members on local politics; conducted candidate perception surveys.
-- Organized canvassing routes for maximum outreach effectiveness leveraging PDI voter data analytics.
-- Collaborated with campaign leadership to implement targeted field strategies, driving voter awareness and engagement.
+- Informed and engaged community members on local policy issues; conducted structured perception surveys and field intake.
+- Planned field operations and canvassing routes for outreach efficiency leveraging PDI data analytics.
+- Collaborated with campaign leadership to track milestones and implement targeted community engagement strategies.
 
 #### Senior Program Coordinator
 
@@ -111,12 +111,12 @@ October 2023 — May 2024
 
 Youth Leadership Institute · Full-Time (40 hr/week)
 
-- Co-facilitated three youth participatory action research electives, engaging 60–70 students per class in critical thinking and leadership development.
-- Acted as Project Director for the California Department of Public Health funded program "Mobilizing Youth to Nix Tobacco" (MYNT), managing end-to-end grant evaluation and reporting.
-- Developed position papers, talking points, presentations, and consultation responses for statewide tobacco prevention engagement.
-- Supported the **$750,000 Sierra San Joaquin Jobs (S2J2) initiative** through coalition building with regional stakeholders.
-- Engaged with development, communications, and executive teams on advancing public health policy goals in Fresno County and the Central Valley.
-- Managed Senior Program Coordinators to deploy tobacco education initiatives across Fresno and Madera Counties.
+- Acted as Project Director for the California Department of Public Health funded program “Mobilizing Youth to Nix Tobacco” (MYNT), managing end-to-end grant compliance, evaluation deliverables, and statutory reporting.
+- Authored policy position papers, executive talking points, presentations, and regulatory consultation responses for statewide public health prevention engagement.
+- Supported the **$750,000 Sierra San Joaquin Jobs (S2J2) initiative** through cross-sector coalition building with regional stakeholders.
+- Partnered across development, communications, and executive lanes to advance public health policy initiatives in Fresno County and the Central Valley.
+- Co-facilitated three youth participatory action research electives, engaging 60–70 students per class in research methodology and leadership development.
+- Supervised Senior Program Coordinators deploying multi-county health education initiatives across Fresno and Madera Counties.
 
 #### Community Health Worker
 
@@ -124,8 +124,8 @@ March 2023 — October 2023
 
 Centro La Familia Advocacy Services · Full-Time (36.5 hr/week)
 
-- Supported an active client roster of 15–25 individuals, navigating public benefits, substance use prevention, and housing programs for vulnerable populations.
-- Developed monthly reporting pipelines including case summaries and individualized care plans, tracking progress metrics to advocate for local resource allocation.
+- Supported an active client roster of 15–25 individuals, navigating public health benefits, substance use prevention, and housing resources with accessible, plain-language guidance.
+- Maintained monthly reporting pipelines including structured case summaries and individualized care plans, tracking progress metrics to inform local resource allocation.
 
 #### Health Education Specialist
 
@@ -133,9 +133,9 @@ January 2022 — February 2023
 
 Merced County Department of Public Health · Full-Time (40 hr/week)
 
-- Organized and coordinated public health education initiatives for the Local Oral Health Program (LOHP), sustaining coalitions between county health leadership and advisory committees.
-- Recruited 10–15 key community stakeholders per presentation cycle to drive program engagement.
-- Built custom Microsoft Excel visualizations and data tables using advanced formulas (VLOOKUP, INDEX/MATCH) to audit and track open-source Medicaid funding utilization in Merced County.
+- Built custom Microsoft Excel visualizations and audit tables using advanced formulas (VLOOKUP, INDEX/MATCH) to track and reconcile open-source Medicaid funding utilization in Merced County.
+- Coordinated public health education initiatives for the Local Oral Health Program (LOHP), sustaining operational coalitions between county health leadership and advisory committees.
+- Recruited 10–15 key community stakeholders per presentation cycle to drive program adoption and health literacy outreach.
 
 #### Communicable Disease Investigator
 
@@ -143,8 +143,8 @@ October 2020 — December 2021
 
 Fresno County Department of Public Health · Full-Time (40 hr/week)
 
-- Conducted rapid epidemiological screening interviews to trace personal infection sources, managing a liaison caseload of 25–60 school districts.
-- Delivered clinical isolation and quarantine guidance for school-based faculty, administrators, and health professionals during emergency COVID-19 pandemic response.
+- Conducted rapid epidemiological screening interviews and case investigations to trace infection sources across a liaison caseload of 25–60 school districts.
+- Translated evolving state and federal clinical isolation and quarantine guidance into actionable protocols for school administrators, faculty, and health professionals during emergency COVID-19 response.
 
 #### Program Coordinator
 
@@ -152,23 +152,27 @@ August 2017 — October 2020
 
 Fresno Barrios Unidos · Full-Time (40 hr/week)
 
-- Coordinated youth development and gang violence prevention programs (Men with Heart & Joven Noble), enrolling over 20 youth per cohort.
+- Administered Apricot CRM system to audit funding streams, foundation deliverables, and longitudinal client service delivery.
 - Served as community liaison with City of Fresno councilmembers and municipal staff to advocate for **$500k+ in capital funding** for public wireless networks and bus rapid transit.
-- Administered Apricot CRM system to track funding streams, foundation donors, and longitudinal service delivery.
+- Coordinated youth development and violence prevention cohorts (Men with Heart & Joven Noble), enrolling over 20 youth per cycle.
 
 ### Technical & Domain Expertise
 
-#### Data & Health Informatics
+#### Compliance, Policy & Accessible Communications
 
-SQL Tableau R Excel & VBA Atlas.ti PDI Analytics
+Title VII & Title IX Compliance ADA & Digital Accessibility Plain-Language Health Literacy Regulatory & Policy Analysis Grant Compliance & Reporting CHES Certification
 
-#### Software & AI Tools
+#### Analytics & Data Reporting
 
-Ollama & Local LLMs Electron JavaScript Docker / Compose Git & GitHub Tailwind CSS
+SQL Tableau Dashboards Advanced Excel (VLOOKUP, INDEX/MATCH, VBA) Medicaid Utilization Tracking R Atlas.ti PDI Analytics
 
-#### Compliance & Leadership
+#### Program Operations & Systems
 
-Title VII & Title IX ADA Compliance Grant Writing & Reporting CHES Certification Apricot CRM Percipio LMS
+Cross-Functional Project Coordination Coalition & Stakeholder Alignment Teammate Onboarding & Training Percipio LMS Apricot CRM Google Workspace & Microsoft 365
+
+#### Applied Technical & Local AI Work Samples
+
+Ollama & Local LLMs Python Android LockTask / Kiosk Mode Git & GitHub Tailwind CSS Sitefinity CMS
 
 ### Education & Credentials
 
