@@ -2,14 +2,30 @@
   "name": "portfolio-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Mars Cruz portfolio site built with Tailwind CSS",
+  "description": "Mars Cruz portfolio site built with React 19, Vite, Meta Astryx, and Tailwind CSS",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/styles.css --minify && python3 scripts/build_llms.py",
-    "build:llms": "python3 scripts/build_llms.py",
-    "check": "python3 scripts/check_facts.py . && python3 scripts/build_llms.py --check",
-    "watch": "tailwindcss -i ./src/input.css -o ./assets/styles.css --watch"
+    "dev": "vite",
+    "build": "vite build && vite build --ssr src/entries/prerender.tsx --outDir .vite-ssr && node scripts/prerender.mjs && python scripts/build_llms.py",
+    "build:llms": "python scripts/build_llms.py",
+    "check": "python scripts/check_facts.py . && python scripts/build_llms.py --check",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "@astryxdesign/cli": "^0.7.17",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "autoprefixer": "^10.7.0",
+    "postcss": "^8.5.33",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "@astryxdesign/core": "^0.7.17",
+    "@astryxdesign/theme-neutral": "^0.7.17",
+    "@stylexjs/stylex": "^0.19.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
   }
 }
