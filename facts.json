@@ -1,0 +1,67 @@
+{
+  "site": "TriBrigadeMars.github.io",
+  "updated": "2026-10-28",
+  "note": "Public-safety guardrail facts for the portfolio. Patterns are regexes and deliberately contain no concrete private values (no phone digits, no credential ID), so this file is safe to commit publicly. Claim IDs (E07, E11, LI-004, LI-005) refer to the LinkedIn evidence ledger maintained in the private career workspace.",
+  "rules": {
+    "forbidden_html": [
+      {
+        "id": "phone-off-site",
+        "reason": "contact preferences: phone number is provided only when strictly required; keep it off public profiles by default",
+        "patterns": ["tel:\\+?1?[0-9]{10}", "[0-9]{3}-[0-9]{3}-[0-9]{4}", "\"telephone\"\\s*:"]
+      },
+      {
+        "id": "credential-id-public",
+        "reason": "EVIDENCE E07: keep credential IDs out of default public copy",
+        "patterns": ["(?i)CHES[^\\n]{0,40}ID\\s*[0-9]"]
+      },
+      {
+        "id": "grant-attribution-unconfirmed",
+        "reason": "EVIDENCE E11: personal grant-securing contribution unconfirmed; keep awarded value distinct from personal attribution",
+        "patterns": ["(?i)successfully\\s+secured", "(?i)Grant Writing \\(\\$750"]
+      },
+      {
+        "id": "lane-aligned-subtitle",
+        "reason": "WS-001: hero subtitle and OG copy mirror the selected broad-default lane; no third site identity",
+        "patterns": ["Compliance Specialty &middot;", "Public Health Program Manager &middot;"]
+      }
+    ],
+    "forbidden_pdf": [
+      {
+        "id": "phone-in-resume-pdf",
+        "reason": "contact preferences: default public resume stays phone-free",
+        "patterns": ["[0-9]{3}-[0-9]{3}-[0-9]{4}"]
+      },
+      {
+        "id": "credential-id-in-pdf",
+        "reason": "E07: credential ID not for default public distribution",
+        "patterns": ["(?i)Specialist[^\\n]{0,40}ID\\s*[0-9]"]
+      }
+    ],
+    "must_match_html": [
+      {"id": "site-title", "patterns": ["Mars Cruz, MPH, CHES"]},
+      {"id": "hero-lane", "reason": "template broad default headline lane", "patterns": ["Public Health Educator"]},
+      {"id": "og-description-lane", "patterns": ["Public Health Educator with 8\\+ years"]},
+      {
+        "id": "project-links",
+        "reason": "three public work-sample repositories must stay linked (E16: verified existing, public)",
+        "patterns": [
+          "github.com/TriBrigadeMars/resume-tailor",
+          "github.com/TriBrigadeMars/Android-Kiosk-Lock-Task-App",
+          "github.com/TriBrigadeMars/hermes-profile-sync"
+        ]
+      },
+      {
+        "id": "education-facts",
+        "reason": "E06/E07 supported education and credential block",
+        "patterns": ["Master of Public Health \\(MPH\\)", "California State University San Marcos", "CHES"]
+      }
+    ]
+  },
+  "held": [
+    {"id": "LI-004-CU-title", "note": "JSON-LD jobTitle left as-is until the overlapping CU records are confirmed"},
+    {"id": "LI-005-YLI-title", "note": "Program Manager vs Senior Program Coordinator; site currently shows the resume variant"},
+    {"id": "LI-005-Fresno-title", "note": "Specialist (LinkedIn) vs Investigator (resume); site shows the resume variant"},
+    {"id": "email-choice", "note": "preferred contact address vs the Gmail address live on the site; awaiting Mars's choice"},
+    {"id": "r-chip", "note": "R appears in the About/knowsAbout audit and skills chips; E08 says resume-listed only - chip removal at Mars's discretion"}
+  ]
+}

@@ -1,0 +1,9 @@
+# https://tribrigademars.github.io/robots.txt
+#
+# Assistants and crawlers: start with the site manual at /llms.txt, or take the
+# whole page in one request from /llms-full.txt. Both are plain Markdown.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tribrigademars.github.io/sitemap.xml

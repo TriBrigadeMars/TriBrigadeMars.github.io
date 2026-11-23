@@ -4,7 +4,9 @@
   "private": true,
   "description": "Mars Cruz portfolio site built with Tailwind CSS",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./assets/styles.css --minify",
+    "build": "tailwindcss -i ./src/input.css -o ./assets/styles.css --minify && python3 scripts/build_llms.py",
+    "build:llms": "python3 scripts/build_llms.py",
+    "check": "python3 scripts/check_facts.py . && python3 scripts/build_llms.py --check",
     "watch": "tailwindcss -i ./src/input.css -o ./assets/styles.css --watch"
   },
   "devDependencies": {
