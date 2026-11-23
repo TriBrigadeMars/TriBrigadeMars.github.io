@@ -19,11 +19,19 @@ Public Health Educator · Program Implementation & Evaluation · Community Partn
 
 Public health educator and program coordinator with over eight years of experience bridging regulatory compliance, accessible health communication, and cross-functional program operations. I translate complex statutory and clinical requirements (Title VII, Title IX, ADA/WCAG) into plain-language training curricula, pair workforce and program evaluation with SQL, Tableau, and advanced Excel analytics, and build local-first tools that protect sensitive data.
 
-Explore Projects & Demos [View Resume (PDF)](assets/resume.pdf) [GitHub](https://github.com/TriBrigadeMars)
+Explore Projects & Demos [Interactive Curriculum Lab →](education.html) [View Resume (PDF)](assets/resume.pdf) [GitHub](https://github.com/TriBrigadeMars)
 
 ### Featured Projects & Case Studies
 
-Compliance analytics, plain-language policy translation, and privacy-first operational work samples.
+Prevention curriculum engineering, compliance analytics, plain-language policy translation, and local-first AI work samples.
+
+Interactive Showcase · Prevention Pedagogy & Program Evaluation 5 Initiatives • Slides, Tabletop Activities & Pre/Post Instruments
+
+#### Educational Initiatives & Interactive Curriculum Lab
+
+Explore the full curriculum engineering portfolio across higher-education student services, academic medicine, graduate public health, and public-interest AI literacy. Inspect approved slide decks with facilitator walkthroughs, filter Bloom’s Taxonomy learning objectives paired with CDC 6-step pre/post evaluations, and test interactive tabletop bystander simulators (*Two Rooms, One Behavior* and *Close the Loop*).
+
+[Explore Interactive Slide Decks →](education.html#slide-decks) [Launch Tabletop Activity Simulator](education.html#activity-lab) [View Learning Objectives & Pre/Post Matrix](education.html#learning-objectives)
 
 Compliance & Workforce Analytics University R1
 
@@ -80,6 +88,62 @@ SOP reproducibility • Auditable config state • Cross-environment sync
 Process Standardization Auditability Python
 
 [View Repository →](https://github.com/TriBrigadeMars/hermes-profile-sync)
+
+Regulatory & Policy Informatics Work Sample
+
+#### Title IX & Civil Rights Policy Tracker
+
+Legislative and regulatory impact tracker for researchers, advocates, and policy staff comparing proposed and enacted federal and state policies impacting Title IX. Runs from a unified codebase as either a hosted Next.js 15 + PostgreSQL web app or an offline local desktop app via embedded PGlite, Electron, and Rust/Tauri v2 shells.
+
+Key Architecture:
+
+Dual web & offline desktop modes • Local Unix-socket / PGlite storage • Statutory comparison
+
+Next.js 15 PostgreSQL / PGlite Tauri v2 / Electron Title IX
+
+[View Repository →](https://github.com/TriBrigadeMars/titleix-policy-tracker)
+
+Local-First Research & Policy RAG Work Sample
+
+#### Office of Equity Open Notebook
+
+Self-contained Windows Electron desktop application wrapping the open-source Open Notebook stack with bundled Python 3.12, Node.js, SurrealDB binary, and pre-installed Docling parser. Enables non-technical staff to synthesize public research and policy guides with local LLMs (Ollama / LM Studio) and zero Docker setup.
+
+Focus:
+
+Zero-Docker desktop installer • Multi-model grounded synthesis • Local SurrealDB storage
+
+Electron SurrealDB Docling Grounded RAG
+
+[View Repository →](https://github.com/TriBrigadeMars/Office-Equity-Open-Notebook)
+
+Agentic QA & Environment Sync Work Sample
+
+#### T3 Code Master Config & Multi-Harness QA
+
+Configuration-only synchronization framework unifying T3 Code Nightly environments, local LM Studio Bionic models, and multi-harness AI agent profiles (Antigravity, Claude Code, Codex, and Hermes). Supports dry-run environment merging without vendoring secrets or session databases.
+
+Focus:
+
+Multi-harness parity • Secret-free config templates • Local LM Studio Bionic routing
+
+Multi-Harness Sync LM Studio Bionic Guardrails
+
+[View Repository →](https://github.com/TriBrigadeMars/t3-code-master-config)
+
+Public-Interest AI Literacy Workshop Sample
+
+#### GDG Denver “AI for Good” Curriculum & QA Lab
+
+14-slide practitioner workshop (*“AI for Good, From a Non-Coder’s Desk”*) demonstrating how non-developers isolate campus data from offline sandboxes, rebuild a 52-page Canvas LMS course with verified APA 7 citations, enforce a 6-step editorial voice guard, and run 3 independent critics over slide outputs.
+
+Case Studies & Controls:
+
+Course redesign QA • 3-critic visual audit • Zero-AI read-only file hygiene
+
+Canvas LMS / IMSCC 3-Critic QA WCAG 2.2 AA Public Sans
+
+[Open Workshop Deck & Case Studies →](education.html#slide-decks)
 
 ### Work Experience
 
@@ -160,19 +224,19 @@ Fresno Barrios Unidos · Full-Time (40 hr/week)
 
 #### Compliance, Policy & Accessible Communications
 
-Title VII & Title IX Compliance ADA & Digital Accessibility Plain-Language Health Literacy Regulatory & Policy Analysis Grant Compliance & Reporting CHES Certification
+Title VII & Title IX Compliance ADA & Digital Accessibility Plain-Language Health Literacy Regulatory & Policy Analysis Grant Compliance & Reporting CHES Certification WCAG 2.2 AA & Section 508 Auditing FERPA & HIPAA Safe Harbor De-Identification APA 7 Citation & Evidence Verification
 
 #### Analytics & Data Reporting
 
-SQL Tableau Dashboards Advanced Excel (VLOOKUP, INDEX/MATCH, VBA) Medicaid Utilization Tracking R Atlas.ti PDI Analytics
+SQL Tableau Dashboards Advanced Excel (VLOOKUP, INDEX/MATCH, VBA) Medicaid Utilization Tracking R Atlas.ti PDI Analytics CDC 6-Step Program Evaluation Paired Pre/Post Psychometrics (Wilcoxon / Cohen’s d) QualCoder & Reflexive Thematic Analysis
 
 #### Program Operations & Systems
 
-Cross-Functional Project Coordination Coalition & Stakeholder Alignment Teammate Onboarding & Training Percipio LMS Apricot CRM Google Workspace & Microsoft 365
+Cross-Functional Project Coordination Coalition & Stakeholder Alignment Teammate Onboarding & Training Percipio LMS Apricot CRM Google Workspace & Microsoft 365 Bloom’s Taxonomy Curriculum Design 5 Ds & VUCA Bystander Pedagogy Canvas LMS (Common Cartridge / IMSCC)
 
 #### Applied Technical & Local AI Work Samples
 
-Ollama & Local LLMs Python Android LockTask / Kiosk Mode Git & GitHub Tailwind CSS Sitefinity CMS
+Ollama & Local LLMs Python Android LockTask / Kiosk Mode Git & GitHub Tailwind CSS Sitefinity CMS Local OCR & PII Redaction (PyMuPDF / Tesseract) Multi-Agent QA Workflows SurrealDB & Grounded Policy RAG
 
 ### Education & Credentials
 

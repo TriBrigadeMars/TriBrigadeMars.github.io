@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 464" width="720" height="464" role="img" aria-labelledby="t d">
+<title id="t">Three layers of resolution</title>
+<desc id="d">Three stacked bars top to bottom: the moment, the person, and the system.</desc>
+<rect x="2" y="2" width="716" height="134" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="2" y="10" width="12" height="118" rx="4" fill="#D97B66"/>
+<text x="40" y="58" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.0">1. THE MOMENT</text>
+<text x="40" y="102" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#333F48" text-anchor="start">Safety &amp; de-escalation first</text>
+<rect x="2" y="165" width="716" height="134" rx="12" fill="#CFB87C" stroke="#CFB87C" stroke-width="2"/>
+<rect x="2" y="173" width="12" height="118" rx="4" fill="#12214A"/>
+<text x="40" y="221" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.0">2. THE PERSON</text>
+<text x="40" y="265" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#333F48" text-anchor="start">Check in privately &amp; protect privacy</text>
+<rect x="2" y="328" width="716" height="134" rx="12" fill="#12214A" stroke="#12214A" stroke-width="2"/>
+<rect x="2" y="336" width="12" height="118" rx="4" fill="#CFB87C"/>
+<text x="40" y="384" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#FAF6F0" text-anchor="start" letter-spacing="1.0">3. THE SYSTEM</text>
+<text x="40" y="428" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#FAF6F0" text-anchor="start">Document, report, adjust workload</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 450" width="500" height="450" role="img" aria-labelledby="t d">
+<title id="t">The five Ds of bystander intervention</title>
+<desc id="d">Five numbered cards for the upstander toolkit: direct, distract, delegate, delay, and document.</desc>
+<rect x="12" y="6" width="476" height="78" rx="12" fill="#CFB87C" stroke="#12214A" stroke-width="2"/>
+<circle cx="58" cy="45.0" r="24" fill="#FAF6F0" stroke="#12214A" stroke-width="2.5"/>
+<text x="58" y="54.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#12214A" text-anchor="middle">1</text>
+<text x="104" y="40" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.0">DIRECT</text>
+<text x="104" y="69" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#12214A" text-anchor="start">In the Moment</text>
+<rect x="12" y="96" width="476" height="78" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="12" y="96" width="10" height="78" rx="4" fill="#CFB87C"/>
+<circle cx="58" cy="135.0" r="24" fill="#FAF6F0" stroke="#12214A" stroke-width="2.5"/>
+<text x="58" y="144.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#12214A" text-anchor="middle">2</text>
+<text x="104" y="130" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.0">DISTRACT</text>
+<text x="104" y="159" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#333F48" text-anchor="start">De-escalate Tension</text>
+<rect x="12" y="186" width="476" height="78" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="12" y="186" width="10" height="78" rx="4" fill="#12214A"/>
+<circle cx="58" cy="225.0" r="24" fill="#FAF6F0" stroke="#12214A" stroke-width="2.5"/>
+<text x="58" y="234.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#12214A" text-anchor="middle">3</text>
+<text x="104" y="220" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.0">DELEGATE</text>
+<text x="104" y="249" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#333F48" text-anchor="start">Involve Support</text>
+<rect x="12" y="276" width="476" height="78" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="12" y="276" width="10" height="78" rx="4" fill="#D97B66"/>
+<circle cx="58" cy="315.0" r="24" fill="#FAF6F0" stroke="#12214A" stroke-width="2.5"/>
+<text x="58" y="324.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#12214A" text-anchor="middle">4</text>
+<text x="104" y="310" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.0">DELAY</text>
+<text x="104" y="339" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#333F48" text-anchor="start">Check-in Afterward</text>
+<rect x="12" y="366" width="476" height="78" rx="12" fill="#12214A" stroke="#12214A" stroke-width="2"/>
+<circle cx="58" cy="405.0" r="24" fill="#FAF6F0" stroke="#CFB87C" stroke-width="2.5"/>
+<text x="58" y="414.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#12214A" text-anchor="middle">5</text>
+<text x="104" y="400" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FAF6F0" text-anchor="start" letter-spacing="1.0">DOCUMENT</text>
+<text x="104" y="429" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#FAF6F0" text-anchor="start">Objective Record</text>
+</svg>

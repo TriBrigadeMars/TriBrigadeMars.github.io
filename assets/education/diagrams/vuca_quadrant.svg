@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" width="720" height="520" role="img" aria-labelledby="t d">
+<title id="t">The VUCA conditions</title>
+<desc id="d">Two-by-two grid of volatility, uncertainty, complexity and ambiguity with operational examples.</desc>
+<rect x="15" y="15" width="330" height="230" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="19" y="15" width="322" height="9" rx="4" fill="#CFB87C"/>
+<text x="37" y="99" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1">V</text>
+<text x="89" y="91" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="0.6">VOLATILITY</text>
+<line x1="37" y1="129" x2="323" y2="129" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="37" y="183" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#333F48" text-anchor="start">Census &amp; cutoff spikes</text>
+<rect x="375" y="15" width="330" height="230" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="379" y="15" width="322" height="9" rx="4" fill="#12214A"/>
+<text x="397" y="99" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#333F48" text-anchor="start" letter-spacing="1">U</text>
+<text x="449" y="91" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="0.6">UNCERTAINTY</text>
+<line x1="397" y1="129" x2="683" y2="129" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="397" y="183" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#333F48" text-anchor="start">Appeals &amp; staffing shifts</text>
+<rect x="15" y="275" width="330" height="230" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="19" y="275" width="322" height="9" rx="4" fill="#D97B66"/>
+<text x="37" y="359" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#333F48" text-anchor="start" letter-spacing="1">C</text>
+<text x="89" y="351" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="0.6">COMPLEXITY</text>
+<line x1="37" y1="389" x2="323" y2="389" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="37" y="443" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#333F48" text-anchor="start">Overlapping federal rules</text>
+<rect x="375" y="275" width="330" height="230" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="379" y="275" width="322" height="9" rx="4" fill="#CFB87C"/>
+<text x="397" y="359" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1">A</text>
+<text x="449" y="351" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="0.6">AMBIGUITY</text>
+<line x1="397" y1="389" x2="683" y2="389" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="397" y="443" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#333F48" text-anchor="start">Intent &amp; leave nuance</text>
+</svg>

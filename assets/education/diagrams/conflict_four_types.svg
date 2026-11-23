@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480" role="img" aria-labelledby="t d">
+<title id="t">Four types of workplace conflict</title>
+<desc id="d">Two-by-two map: task conflict and process conflict on the top row, status conflict and relationship conflict below, with relationship conflict marked as the highest risk.</desc>
+<rect x="12" y="14" width="298" height="218" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="12" y="14" width="298" height="10" rx="4" fill="#CFB87C"/>
+<text x="34" y="112" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.2">TASK</text>
+<text x="34" y="166" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#333F48" text-anchor="start">What we do</text>
+<rect x="330" y="14" width="298" height="218" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="330" y="14" width="298" height="10" rx="4" fill="#12214A"/>
+<text x="352" y="112" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.2">PROCESS</text>
+<text x="352" y="166" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#333F48" text-anchor="start">How we do it</text>
+<rect x="12" y="248" width="298" height="218" rx="12" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="2"/>
+<rect x="12" y="248" width="298" height="10" rx="4" fill="#CFB87C"/>
+<text x="34" y="346" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#12214A" text-anchor="start" letter-spacing="1.2">STATUS</text>
+<text x="34" y="400" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#333F48" text-anchor="start">Who decides</text>
+<rect x="330" y="248" width="298" height="218" rx="12" fill="#12214A" stroke="#D97B66" stroke-width="3"/>
+<rect x="330" y="248" width="298" height="10" rx="4" fill="#D97B66"/>
+<rect x="352" y="274" width="174" height="34" rx="17" fill="#D97B66"/>
+<text x="439" y="297" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.8">HIGHEST RISK</text>
+<text x="352" y="362" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#FAF6F0" text-anchor="start" letter-spacing="1.0">RELATIONSHIP</text>
+<text x="352" y="410" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#FAF6F0" text-anchor="start">Interpersonal friction</text>
+</svg>

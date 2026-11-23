@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 890 120" width="890" height="120" role="img" aria-labelledby="t d">
+<title id="t">The five Ds upstander toolkit</title>
+<desc id="d">Five chevrons naming direct, distract, delegate, delay and document.</desc>
+<polygon points="4,4 172,4 190,60.0 172,116 4,116 22,60.0" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="106.0" y="67" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.6">DIRECT</text>
+<polygon points="178,4 346,4 364,60.0 346,116 178,116 196,60.0" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="280.0" y="67" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.6">DISTRACT</text>
+<polygon points="352,4 520,4 538,60.0 520,116 352,116 370,60.0" fill="#CFB87C" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="454.0" y="67" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.6">DELEGATE</text>
+<polygon points="526,4 694,4 712,60.0 694,116 526,116 544,60.0" fill="#CFB87C" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="628.0" y="67" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.6">DELAY</text>
+<polygon points="700,4 868,4 886,60.0 868,116 700,116 718,60.0" fill="#12214A" stroke="#12214A" stroke-width="1.5"/>
+<text x="802.0" y="67" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FAF6F0" text-anchor="middle" letter-spacing="0.6">DOCUMENT</text>
+</svg>

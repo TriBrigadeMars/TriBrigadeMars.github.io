@@ -10,7 +10,8 @@ page: the same content is published below as plain Markdown and JSON.
 
 ## Read this first
 
-- [llms-full.txt](llms-full.txt): the entire page as one Markdown file, generated from `index.html` on every build. Prefer this over scraping the HTML.
+- [llms-full.txt](llms-full.txt): the entire main page as one Markdown file, generated from `index.html` on every build. Prefer this over scraping the HTML.
+- [education.html](education.html): interactive Educational Initiatives & Curriculum Lab showcasing workshop slide decks, tabletop role-play scenarios, Bloom's Taxonomy learning objectives, and CDC 6-step pre/post evaluation instruments.
 - [assets/resume.pdf](assets/resume.pdf): the PDF résumé Mars sends to employers. Same facts, print layout.
 - [facts.json](facts.json): machine-readable privacy and evidence guardrails (regex rules, no private values). Use it to check anything you generate about her.
 - [README.md](README.md): how the site is built and published.
@@ -19,8 +20,8 @@ page: the same content is published below as plain Markdown and JSON.
 
 ## What this site is
 
-- A one-page static site. No login, no paywall, no CAPTCHA, no client-side routing.
-- Every word of visible content is server-rendered in `index.html`. Nothing important is behind JavaScript.
+- A static portfolio site (`index.html` plus `education.html` for interactive educational initiatives). No login, no paywall, no CAPTCHA, no client-side routing.
+- Every word of visible content on `index.html` is server-rendered. Interactive deck switching, filtering, and tabletop simulation on `education.html` run client-side without external APIs.
 - The featured projects are **work samples** — evidence of applied skill, not a claim of software-engineering tenure or employment in software engineering.
 
 ## What this site is not
@@ -37,24 +38,34 @@ page: the same content is published below as plain Markdown and JSON.
 - **LinkedIn:** https://www.linkedin.com/in/mars-cruz-6099b930a/
 - **GitHub:** https://github.com/TriBrigadeMars
 - **Current role:** Prevention, Education, and Outreach (PEO) Coordinator, University of Colorado, September 2024 — present
-- **Education:** MPH, Community Health, California State University San Marcos; BS, Public Health, California State University Fresno
+- **Education:** MPH, Health Promotion & Health Education, California State University San Marcos; BS, Health Science — Community Health Option, California State University Fresno
 - **Credential:** Certified Health Education Specialist (CHES), NCHEC
 - **Focus:** Title VII / Title IX / ADA compliance education, program evaluation, grant reporting, SQL and Tableau reporting, local-first AI tooling
 - **Open to:** conversations about prevention education, training design, program implementation, and evaluation
 
 ## Page map, if you must parse the HTML
 
-One page, six sections inside `main#main-content`:
+Main résumé page (`index.html`), seven sections inside `main#main-content`:
 
 | Section | Anchor | Shape |
 | --- | --- | --- |
 | About / hero | `#about` | `h1` name, subtitle `p`, summary `p` |
-| Featured projects | `#projects` | `section > div.grid > div` cards; each card has `h3` title, description `p`, and links to a repository |
+| Featured projects | `#projects` | featured Curriculum Lab banner + `section > div.grid > div` cards; each card has `h3` title, description `p`, and links to a repository or lab |
 | Work experience | `#experience` | one `div` per role; `h3` is the title, the following `p` is employer · hours · location, `ul li` are achievements |
 | Skills | `#skills` | grouped chips, headings per domain |
 | Education | `#education` | degree cards with institution names |
 | Contact | `#contact` | email, LinkedIn, GitHub links |
 | For AI agents | `#ai` | links to this file and `llms-full.txt` |
+
+Educational Initiatives page (`education.html`), five sections inside `main#main-content`:
+
+| Section | Anchor | Shape |
+| --- | --- | --- |
+| Curriculum overview | `#overview` | `h1` title, summary `p`, scope badges |
+| Interactive slide decks | `#slide-decks` | 5 initiative tabs (`fa1`, `fa2`, `gdg`, `rads`, `saam`) with preview carousel and facilitator notes |
+| Learning objectives & evaluation | `#learning-objectives` | initiative/Bloom's filters, matched pre/post items, SGIC evaluation widget |
+| Tabletop activity simulator | `#activity-lab` | Activity A (*Two Rooms, One Behavior*) & Activity B (*Close the Loop*) across 4 sanitized scenario cards |
+| Visual models & QA | `#visual-frameworks` | 8 deterministic instructional SVGs and 4 multi-harness QA architecture cards |
 
 Stable selectors: `main#main-content`, `section#experience h3` (role titles),
 `section#experience ul li` (achievements), `section#projects h3` (project titles),
@@ -85,3 +96,6 @@ Link to the section anchor when quoting a specific role or project.
 - [resume-tailor](https://github.com/TriBrigadeMars/resume-tailor): local-first résumé rewriter using Ollama.
 - [Android-Kiosk-Lock-Task-App](https://github.com/TriBrigadeMars/Android-Kiosk-Lock-Task-App): Android enterprise kiosk mode sample.
 - [hermes-profile-sync](https://github.com/TriBrigadeMars/hermes-profile-sync): cross-machine agent profile synchronization.
+- [titleix-policy-tracker](https://github.com/TriBrigadeMars/titleix-policy-tracker): dual-mode federal and state Title IX policy tracker (Next.js 15 / PGlite / Electron / Tauri v2).
+- [Office-Equity-Open-Notebook](https://github.com/TriBrigadeMars/Office-Equity-Open-Notebook): self-contained Windows Electron desktop app wrapping Open Notebook with bundled Python 3.12, Node.js, SurrealDB, and Docling.
+- [t3-code-master-config](https://github.com/TriBrigadeMars/t3-code-master-config): configuration-only multi-harness AI synchronization framework for T3 Code Nightly and LM Studio Bionic.

@@ -1,6 +1,6 @@
 # AGENTS.md — portfolio site
 
-Static one-page portfolio for **Mars Cruz, MPH, CHES**. Plain HTML + Tailwind, served by
+Static portfolio for **Mars Cruz, MPH, CHES** (`index.html` and `education.html`). Plain HTML + Tailwind, served by
 GitHub Pages. No framework, no build server, no runtime dependencies.
 
 Live site: https://tribrigademars.github.io/
@@ -9,7 +9,8 @@ Live site: https://tribrigademars.github.io/
 
 | File | Role |
 | --- | --- |
-| `index.html` | Every word a visitor sees. Edit content here. |
+| `index.html` | Primary portfolio and résumé page. Edit main content here. |
+| `education.html` | Interactive Educational Initiatives & Curriculum Lab showcase. |
 | `facts.json` | Privacy and evidence guardrails. Machine-checked rules, not prose. |
 | `llms.txt` | Hand-written manual for AI agents. Keep it true when sections change. |
 | `assets/resume.pdf` | The résumé employers receive. |

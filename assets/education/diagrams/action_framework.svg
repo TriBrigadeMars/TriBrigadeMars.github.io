@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 112" width="760" height="112" role="img" aria-labelledby="t d">
+<title id="t">Action framework</title>
+<desc id="d">Four chevrons running left to right: notice, name, document, delegate.</desc>
+<polygon points="4,4 182,4 200,56.0 182,108 4,108 22,56.0" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="111.0" y="63" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.8">NOTICE</text>
+<polygon points="190,4 368,4 386,56.0 368,108 190,108 208,56.0" fill="#CFB87C" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="297.0" y="63" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.8">NAME</text>
+<polygon points="376,4 554,4 572,56.0 554,108 376,108 394,56.0" fill="#F2ECE1" stroke="#E2D9CC" stroke-width="1.5"/>
+<text x="483.0" y="63" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="0.8">DOCUMENT</text>
+<polygon points="562,4 740,4 758,56.0 740,108 562,108 580,56.0" fill="#12214A" stroke="#12214A" stroke-width="1.5"/>
+<text x="669.0" y="63" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FAF6F0" text-anchor="middle" letter-spacing="0.8">DELEGATE</text>
+</svg>

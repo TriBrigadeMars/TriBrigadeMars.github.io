@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 540" width="580" height="540" role="img" aria-labelledby="t d">
+<title id="t">Four-role case practice</title>
+<desc id="d">One workflow conflict at the centre, examined from four roles: complainant, respondent, witness one and witness two.</desc>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#12214A"/></marker></defs>
+<path d="M210 196 L150 130" stroke="#12214A" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+<path d="M370 196 L430 130" stroke="#12214A" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+<path d="M210 344 L150 410" stroke="#12214A" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+<path d="M370 344 L430 410" stroke="#12214A" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+<rect x="100" y="196" width="380" height="148" rx="12" fill="#CFB87C" stroke="#12214A" stroke-width="3"/>
+<text x="290" y="260" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#12214A" text-anchor="middle" letter-spacing="2.0">SCENARIO</text>
+<text x="290" y="305" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#12214A" text-anchor="middle">Workflow conflict</text>
+<rect x="16" y="20" width="250" height="104" rx="12" fill="#CFB87C" stroke="#12214A" stroke-width="2.5"/>
+<text x="141.0" y="80.0" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="middle">Complainant</text>
+<rect x="314" y="20" width="250" height="104" rx="12" fill="#F2ECE1" stroke="#12214A" stroke-width="2.5"/>
+<rect x="314" y="20" width="250" height="10" rx="4" fill="#CFB87C"/>
+<text x="439.0" y="84.0" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="middle">Respondent</text>
+<rect x="16" y="416" width="250" height="104" rx="12" fill="#F2ECE1" stroke="#12214A" stroke-width="2.5"/>
+<rect x="16" y="416" width="250" height="10" rx="4" fill="#D97B66"/>
+<text x="141.0" y="480.0" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#12214A" text-anchor="middle">Witness One</text>
+<rect x="314" y="416" width="250" height="104" rx="12" fill="#12214A" stroke="#12214A" stroke-width="2.5"/>
+<rect x="314" y="416" width="250" height="10" rx="4" fill="#CFB87C"/>
+<text x="439.0" y="480.0" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#FAF6F0" text-anchor="middle">Witness Two</text>
+</svg>

@@ -53,12 +53,11 @@ def scan_pdf(root: Path, rules: list, results: list) -> None:
     if shutil.which("pdftotext") is None:
         results.append("⚠ skip: PDF rules unenforced (pdftotext not installed)")
         return
-    with tempfile.NamedTemporaryFile(suffix=".txt") as tmp:
-        proc = subprocess.run(["pdftotext", "-layout", str(pdf_path), tmp.name], capture_output=True)
-        if proc.returncode != 0:
-            results.append("⚠ skip: pdftotext failed on resume.pdf")
-            return
-        text = Path(tmp.name).read_text(encoding="utf-8", errors="replace")
+    proc = subprocess.run(["pdftotext", "-layout", str(pdf_path), "-"], capture_output=True)
+    if proc.returncode != 0:
+        results.append("⚠ skip: pdftotext failed on resume.pdf")
+        return
+    text = proc.stdout.decode("utf-8", errors="replace")
     scan_forbidden(text, rules, "resume.pdf", results)
 
 
@@ -74,7 +73,9 @@ def main() -> int:
     results: list = []
 
     html = page_path.read_text(encoding="utf-8")
-    scan_forbidden(html, compile_rules(rules.get("forbidden_html", [])), PAGE, results)
+    forbidden_rules = compile_rules(rules.get("forbidden_html", []))
+    for html_file in sorted(root.glob("*.html")):
+        scan_forbidden(html_file.read_text(encoding="utf-8"), forbidden_rules, html_file.name, results)
     scan_must_html(html, compile_rules(rules.get("must_match_html", [])), results)
     scan_pdf(root, compile_rules(rules.get("forbidden_pdf", [])), results)
 

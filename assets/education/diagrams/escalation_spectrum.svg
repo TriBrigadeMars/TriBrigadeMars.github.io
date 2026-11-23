@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 128" width="1020" height="128" role="img" aria-labelledby="t d">
+<title id="t">Escalation spectrum</title>
+<desc id="d">Four-stage escalation arrow: Unaddressed Incivility, Passive-Aggressive Slights, Hostile Climate, and Formal Grievance; early action interrupts drift.</desc>
+<polygon points="4,7 248,7 266,64.0 248,121 4,121 22,64.0" fill="#F2ECE1" stroke="#12214A" stroke-width="2"/>
+<rect x="16" y="7" width="226" height="8" rx="3" fill="#CFB87C"/>
+<text x="133.0" y="56" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle">Unaddressed</text>
+<text x="133.0" y="86" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle">Incivility</text>
+<polygon points="254,7 498,7 516,64.0 498,121 254,121 272,64.0" fill="#CFB87C" stroke="#12214A" stroke-width="2"/>
+<text x="383.0" y="56" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle">Passive-Aggressive</text>
+<text x="383.0" y="86" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle">Slights</text>
+<polygon points="504,7 748,7 766,64.0 748,121 504,121 522,64.0" fill="#F2ECE1" stroke="#D97B66" stroke-width="3.5"/>
+<rect x="516" y="7" width="226" height="8" rx="3" fill="#D97B66"/>
+<text x="633.0" y="56" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle">Hostile</text>
+<text x="633.0" y="86" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#12214A" text-anchor="middle">Climate</text>
+<polygon points="754,7 998,7 1016,64.0 998,121 754,121 772,64.0" fill="#12214A" stroke="#12214A" stroke-width="2"/>
+<rect x="766" y="7" width="226" height="8" rx="3" fill="#CFB87C"/>
+<text x="883.0" y="56" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FAF6F0" text-anchor="middle">Formal</text>
+<text x="883.0" y="86" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#FAF6F0" text-anchor="middle">Grievance</text>
+</svg>
