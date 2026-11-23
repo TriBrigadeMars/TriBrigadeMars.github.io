@@ -6,53 +6,57 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['"Public Sans"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-        display: ['"Public Sans"', '"Helvetica Neue"', 'Helvetica', 'Arial', '"Arial Narrow"', 'sans-serif'],
+        display: ['"Barlow Condensed"', '"Public Sans"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
       },
       colors: {
-        // CU Denver primary + accessible gold
+        alabaster: '#FAF8F3',
+        // Heritage Burnished & Deep Ochre (structural accent + WCAG AA text)
         gold: {
-          100: '#F4EDDC',
-          300: '#DBC99E',
-          500: '#CFB87C',
-          600: '#8D7334',
-          700: '#75602B',
+          100: '#F5EEDB',
+          300: '#DEC484',
+          500: '#C8A24A',
+          600: '#7A5C18',
+          700: '#634910',
         },
-        // City Heights Sandstone
+        // Warm Front Range surfaces (Alabaster & Warm Linen)
         sandstone: {
-          50: '#FBF8F1',
-          100: '#F1EAD8',
-          200: '#E3D9C2',
+          50: '#FAF8F3',
+          100: '#EFE9DC',
+          200: '#DFD5C0',
         },
-        // Skyline Slate (brand tertiary)
+        // Deep & Skyline Slate
         skyline: {
-          100: '#DCE7EB',
-          600: '#2E5D6E',
-          700: '#244C5A',
-          800: '#1D3843',
+          100: '#DAE6EA',
+          600: '#275260',
+          700: '#1F4350',
+          800: '#17313B',
+          900: '#121E24',
         },
-        // CU Black / Dark Gray / Light Gray neutrals, tuned for WCAG AA
+        // Charcoal Ink & Muted Slate neutrals, tuned for WCAG AA/AAA
         ink: {
-          300: '#CBD1D3',
-          500: '#6B6E70',
-          600: '#565A5C',
-          700: '#3A3A3A',
-          900: '#1F1F1F',
-          950: '#14262E',
+          300: '#C4CED2',
+          500: '#687277',
+          600: '#525C61',
+          700: '#333D42',
+          900: '#1B2428',
+          950: '#121E24',
         },
-        // Centennial Teal (brand secondary)
+        // Front Range Teal & Alpine Mist (signature interactive action, <=20% footprint)
         teal: {
-          100: '#D9EEF0',
-          300: '#6FC3CB',
-          500: '#28939D',
-          600: '#1B6B73',
-          700: '#15545B',
+          100: '#D8ECEE',
+          300: '#6EC4C9',
+          500: '#258991',
+          600: '#1B5E63',
+          700: '#154D52',
         },
-        // Brand tertiary accents - icons / CTAs / small accents only, never text
-        sunset: '#F87C56',
-        brick: '#E35205',
-        cherry: '#A6093D',
+        // Warm Editorial Highlights - icons / 3px borders / indicator dots only, never small prose
+        terracotta: '#C4533A',
+        sunset: '#E87451',
+        brick: '#D44D08',
+        cherry: '#9E1440',
       },
     },
   },
   plugins: [],
-}
+};

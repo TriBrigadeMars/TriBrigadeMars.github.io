@@ -54,8 +54,8 @@ Main résumé page (`index.html`), seven sections inside `main#main-content`:
 | Work experience | `#experience` | one `div` per role; `h3` is the title, the following `p` is employer · hours · location, `ul li` are achievements |
 | Skills | `#skills` | grouped chips, headings per domain |
 | Education | `#education` | degree cards with institution names |
-| Contact | `#contact` | email, LinkedIn, GitHub links |
-| For AI agents | `#ai` | links to this file and `llms-full.txt` |
+| Contact | `#contact` | email (with copy button), LinkedIn, GitHub, and PDF résumé links |
+| For AI agents | `#ai` | collapsible disclosure linking to this file, `llms-full.txt`, `facts.json`, and `AGENTS.md` |
 
 Educational Initiatives page (`education.html`), five sections inside `main#main-content`:
 

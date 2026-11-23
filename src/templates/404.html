@@ -7,11 +7,12 @@
     <meta name="robots" content="noindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-    <meta name="theme-color" content="#1D3843">
+    <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#121E24" media="(prefers-color-scheme: dark)">
 
     <script>
         (function () {
@@ -19,11 +20,11 @@
             var root = document.documentElement;
             root.classList.toggle('dark', isDark);
             root.setAttribute('data-theme', isDark ? 'dark' : 'light');
-            root.setAttribute('data-astryx-theme', 'cu-denver-brand');
+            root.setAttribute('data-astryx-theme', 'front-range-civic');
         })();
     </script>
 </head>
-<body class="bg-white text-ink-900 dark:bg-ink-950 dark:text-sandstone-50 font-sans antialiased transition-colors duration-200">
+<body class="bg-alabaster text-ink-900 dark:bg-ink-950 dark:text-sandstone-50 font-sans antialiased transition-colors duration-200">
     <div id="root"><!--app-html--></div>
     <script type="module" src="/src/entries/notFound.tsx"></script>
 </body>

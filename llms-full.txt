@@ -13,19 +13,21 @@ Public Health & Applied Informatics
 
 ## Mars Cruz, MPH, CHES
 
-Public Health Educator · Program Implementation & Evaluation · Community Partnerships
+Public Health Educator · Program Implementation and Evaluation · Community Partnerships
 
 Denver, CO (Remote & Hybrid)·nalcs.mika@gmail.com
 
 Public health educator and program coordinator with 8+ years of experience translating regulatory compliance and prevention science into plain-language training and measurable operations.
 
+Mars Cruz, MPH, CHES·Denver, CO
+
 Compliance Education
 
-Plain-language Title VII, Title IX & ADA/WCAG training curricula and tabletop exercises.
+Plain-language Title VII, Title IX, and ADA/WCAG training curricula and tabletop exercises.
 
 Evaluation & Analytics
 
-CDC 6-step pre/post evaluation paired with SQL, Tableau & Excel compliance reporting.
+CDC 6-step pre/post evaluation paired with SQL, Tableau, and Excel compliance reporting.
 
 Local-First Tooling
 
@@ -37,37 +39,81 @@ Offline desktop and multi-harness QA workflows designed to protect sensitive rec
 
 Prevention curriculum engineering, compliance analytics, plain-language policy translation, and local-first AI work samples.
 
-Interactive Showcase · Prevention Pedagogy & Program Evaluation5 Initiatives • Slides, Tabletop Activities & Pre/Post Instruments
+Interactive Showcase · Prevention Pedagogy & Evaluation5 Initiatives • Slides, Tabletop Activities & Pre/Post Instruments
 
 #### Educational Initiatives & Interactive Curriculum Lab
 
-Explore the full curriculum engineering portfolio across higher-education student services, academic medicine, graduate public health, and public-interest AI literacy. Inspect approved slide decks with facilitator walkthroughs, filter Bloom’s Taxonomy learning objectives paired with CDC 6-step pre/post evaluations, and test interactive tabletop bystander simulators (*Two Rooms, One Behavior* and *Close the Loop*).
+Explore the curriculum engineering portfolio across student services, academic medicine, graduate public health, and AI literacy. Inspect annotated slide decks, filter Bloom’s Taxonomy objectives paired with CDC 6-step pre/post evaluations, and test interactive bystander simulators.
+
+[Student Services Day 1 Four Types of Workplace Conflict deck →](education.html#slide-decks)
+
+[GDG Denver AI for Good 52-page Canvas course QA pipeline →](education.html#slide-decks)
+
+[5 Ds Pedagogical Model Deterministic accessible SVG framework →](education.html#visual-frameworks)
 
 [Explore Interactive Slide Decks →](education.html#slide-decks)[Launch Tabletop Activity Simulator](education.html#activity-lab)[View Learning Objectives & Pre/Post Matrix](education.html#learning-objectives)
 
-Compliance & Workforce AnalyticsUniversity R1
+Showing 8 of 8
+
+Featured Public Health, Policy & Curriculum Work
+
+Compliance & Workforce AnalyticsFeatured · University R1
 
 #### Title VII Compliance Analytics & Reporting
 
-Problem: Campus leadership and outreach units needed timely visibility into training adherence and outreach gaps across an academic and clinical community of over 22,000 members.
-
-Role / Approach: As Prevention, Education, and Outreach (PEO) Coordinator, authored SQL queries over quantitative teammate records and built interactive Tableau dashboards for institutional leaders.
-
-Verified Outcome: Delivered recurring SQL reporting pipelines and audit-ready compliance visibility across institutional lanes.
+Built recurring SQL reporting pipelines and Tableau compliance dashboards covering an academic and clinical community of over 22,000 members.
 
 SQLTableauTitle VII / IXCompliance Reporting
 
 Read Experience Details →
 
+Problem:Campus leadership and outreach units needed timely visibility into training adherence and outreach gaps across an academic and clinical community of over 22,000 members.
+
+Role & Approach:As Prevention, Education, and Outreach (PEO) Coordinator, authored SQL queries over quantitative teammate records and built interactive Tableau dashboards for institutional leaders.
+
+Verified Outcome:Delivered recurring SQL reporting pipelines and audit-ready compliance visibility across institutional lanes.
+
+Regulatory & Policy InformaticsFeatured · Work Sample
+
+#### Title IX & Civil Rights Policy Tracker
+
+Dual-mode web and local offline statutory tracker enabling side-by-side comparison of proposed and enacted federal and state Title IX rules.
+
+Next.js 15PostgreSQL / PGliteTauri v2 / ElectronTitle IX
+
+[View Repository →](https://github.com/TriBrigadeMars/titleix-policy-tracker)
+
+Problem:Researchers, advocates, and policy staff need to compare proposed and enacted federal and state Title IX rules across both connected and offline environments.
+
+Role & Approach:Independent work sample engineered from one codebase as a hosted Next.js 15 and PostgreSQL web app and an offline desktop shell via embedded PGlite, Electron, and Rust/Tauri v2.
+
+Verified Outcome:Supports dual web and local offline statutory comparison with local Unix-socket / PGlite storage; source repository published on GitHub.
+
+Public-Interest AI LiteracyFeatured · Workshop Sample
+
+#### GDG Denver “AI for Good” Curriculum & QA Lab
+
+Non-coder AI governance workshop documenting offline sandboxes, a 52-page Canvas LMS rebuild, a 6-step voice guard, and 3-critic visual audits.
+
+Canvas LMS / IMSCC3-Critic QAWCAG 2.2 AAPublic Sans
+
+[Open Workshop Deck & Case Studies →](education.html#slide-decks)
+
+Problem:Practitioners adopting AI tools without software backgrounds face risks of citation errors, accessibility gaps, and eroded educator voice.
+
+Role & Approach:Independent workshop sample ("AI for Good, From a Non-Coder's Desk") detailing offline sandboxes, a 52-page Canvas LMS course rebuild, a 6-step voice guard, and 3-critic visual audits.
+
+Verified Outcome:Documents stage-gated course QA, read-only file hygiene controls, and 12 annotated slide walkthroughs in the interactive Curriculum Lab.
+
+Applied Local-First AI & Field Tooling Work Samples
+
 Data Governance & Plain LanguageWork Sample
 
 #### Resume Tailor (Local AI Rewriter)
 
-Problem: Sensitive career, personnel, and policy materials cannot be uploaded to external cloud AI APIs when adapting writing to plain-language standards.
+Offline desktop application using a local Ollama LLM to align structured writing against competency requirements without external cloud API uploads.
 
-Role / Approach: Independent work sample built as a local-first desktop app comparing structured documents against target competency requirements via a local Ollama LLM instance.
-
-Verified Outcome: Demonstrates offline plain-language alignment and competency comparison with zero sensitive data sent to external cloud APIs; source repository published on GitHub.
+Case Study Details (Problem, Approach & Outcome)Problem:Sensitive career, personnel, and policy materials cannot be uploaded to external cloud AI APIs when adapting writing to plain-language standards. Role & Approach:Independent work sample built as a local-first desktop app comparing structured documents against target competency requirements via a local Ollama LLM instance. Verified Outcome:Demonstrates offline plain-language alignment and competency comparison with zero sensitive data sent to external cloud APIs; source repository published on GitHub.
 
 Data GovernancePlain LanguageOllamaLocal LLMs
 
@@ -77,11 +123,9 @@ Clinical Field & Device ControlsWork Sample
 
 #### Android Kiosk Lock Task App
 
-Problem: Community health intake kiosks, outpatient clinical screening tablets, and field survey stations risk tampering when devices remain unlocked to general OS apps.
+Java Android SDK utility locking community health intake kiosks and screening tablets into approved single-purpose workflows via enterprise LockTask mode.
 
-Role / Approach: Independent work sample built in Java on the Android SDK using enterprise LockTask mode to lock devices into single-purpose clinical and survey interfaces.
-
-Verified Outcome: Provides tamper-resistant hardware lockdown keeping point-of-care field devices confined to approved workflows; repository published on GitHub.
+Case Study Details (Problem, Approach & Outcome)Problem:Community health intake kiosks, outpatient clinical screening tablets, and field survey stations risk tampering when devices remain unlocked to general OS apps. Role & Approach:Independent work sample built in Java on the Android SDK using enterprise LockTask mode to lock devices into single-purpose clinical and survey interfaces. Verified Outcome:Provides tamper-resistant hardware lockdown keeping point-of-care field devices confined to approved workflows; repository published on GitHub.
 
 Android SDKJavaLockTask APIClinical Intake
 
@@ -91,39 +135,21 @@ Workflow Standardization & AuditabilityWork Sample
 
 #### Hermes Agent Profile Sync
 
-Problem: Cross-machine configuration drift undermines deterministic workflows and reproducible standard operating procedures (SOPs) across isolated workstations.
+Python cross-environment synchronization utility tracking and aligning deterministic standard operating procedures across isolated workstations.
 
-Role / Approach: Independent work sample implemented in Python as a cross-environment synchronization utility tracking and aligning reproducible workstation states.
-
-Verified Outcome: Maintains deterministic, auditable environment configurations across isolated workstations; source repository published on GitHub.
+Case Study Details (Problem, Approach & Outcome)Problem:Cross-machine configuration drift undermines deterministic workflows and reproducible standard operating procedures (SOPs) across isolated workstations. Role & Approach:Independent work sample implemented in Python as a cross-environment synchronization utility tracking and aligning reproducible workstation states. Verified Outcome:Maintains deterministic, auditable environment configurations across isolated workstations; source repository published on GitHub.
 
 Process StandardizationAuditabilityPython
 
 [View Repository →](https://github.com/TriBrigadeMars/hermes-profile-sync)
 
-Regulatory & Policy InformaticsWork Sample
-
-#### Title IX & Civil Rights Policy Tracker
-
-Problem: Researchers, advocates, and policy staff need to compare proposed and enacted federal and state Title IX rules across both connected and offline environments.
-
-Role / Approach: Independent work sample engineered from one codebase as a hosted Next.js 15 + PostgreSQL web app and an offline desktop shell via embedded PGlite, Electron, and Rust/Tauri v2.
-
-Verified Outcome: Supports dual web and local offline statutory comparison with local Unix-socket / PGlite storage; source repository published on GitHub.
-
-Next.js 15PostgreSQL / PGliteTauri v2 / ElectronTitle IX
-
-[View Repository →](https://github.com/TriBrigadeMars/titleix-policy-tracker)
-
 Local-First Research & Policy RAGWork Sample
 
 #### Office of Equity Open Notebook
 
-Problem: Non-technical staff cannot rely on Docker setup when synthesizing public research and policy guides using local LLMs.
+Zero-Docker Windows Electron installer bundling Python 3.12, Node.js, SurrealDB, and Docling for local-model policy synthesis.
 
-Role / Approach: Independent work sample wrapping the open-source Open Notebook stack in a self-contained Windows Electron installer bundling Python 3.12, Node.js, SurrealDB, and Docling.
-
-Verified Outcome: Enables zero-Docker desktop installation and multi-model grounded synthesis via Ollama or LM Studio with local SurrealDB storage; source published on GitHub.
+Case Study Details (Problem, Approach & Outcome)Problem:Non-technical staff cannot rely on Docker setup when synthesizing public research and policy guides using local LLMs. Role & Approach:Independent work sample wrapping the open-source Open Notebook stack in a self-contained Windows Electron installer bundling Python 3.12, Node.js, SurrealDB, and Docling. Verified Outcome:Enables zero-Docker desktop installation and multi-model grounded synthesis via Ollama or LM Studio with local SurrealDB storage; source published on GitHub.
 
 ElectronSurrealDBDoclingGrounded RAG
 
@@ -133,29 +159,13 @@ Agentic QA & Environment SyncWork Sample
 
 #### T3 Code Master Config & Multi-Harness QA
 
-Problem: Synchronizing multiple AI harnesses and local models risks configuration skew or leaking secrets and local session databases.
+Secret-free configuration synchronization and dry-run merge pipeline maintaining parity across six local and CLI agent harnesses.
 
-Role / Approach: Independent work sample creating a configuration-only synchronization framework with dry-run merging across T3 Code Nightly, LM Studio Bionic, Antigravity, Claude Code, Codex, and Hermes.
-
-Verified Outcome: Maintains multi-harness parity with secret-free config templates and zero vendored session databases; repository published on GitHub.
+Case Study Details (Problem, Approach & Outcome)Problem:Synchronizing multiple AI harnesses and local models risks configuration skew or leaking secrets and local session databases. Role & Approach:Independent work sample creating a configuration-only synchronization framework with dry-run merging across T3 Code Nightly, LM Studio Bionic, Antigravity, Claude Code, Codex, and Hermes. Verified Outcome:Maintains multi-harness parity with secret-free config templates and zero vendored session databases; repository published on GitHub.
 
 Multi-Harness SyncLM Studio BionicGuardrails
 
 [View Repository →](https://github.com/TriBrigadeMars/t3-code-master-config)
-
-Public-Interest AI LiteracyWorkshop Sample
-
-#### GDG Denver “AI for Good” Curriculum & QA Lab
-
-Problem: Practitioners adopting AI tools without software backgrounds face risks of citation errors, accessibility gaps, and eroded educator voice.
-
-Role / Approach: Independent workshop sample ("AI for Good, From a Non-Coder's Desk") detailing offline sandboxes, a 52-page Canvas LMS course rebuild, a 6-step voice guard, and 3-critic visual audits.
-
-Verified Outcome: Documents stage-gated course QA, read-only file hygiene controls, and 12 annotated slide walkthroughs in the interactive Curriculum Lab.
-
-Canvas LMS / IMSCC3-Critic QAWCAG 2.2 AAPublic Sans
-
-[Open Workshop Deck & Case Studies →](education.html#slide-decks)
 
 ### Work Experience
 
@@ -278,7 +288,7 @@ NCHEC
 
 ### Get in Touch
 
-I am open to conversations about prevention education, training design, program implementation, and evaluation. Portfolio projects above are work samples, not a claim of software-engineering tenure. Feel free to connect via any of the channels below.
+I am open to conversations about prevention education, training design, program implementation, and evaluation. Portfolio projects above are work samples, not a claim of software-engineering tenure. Connect via any of the channels below.
 
 [Direct Email nalcs.mika@gmail.com](mailto:nalcs.mika@gmail.com)
 
@@ -286,16 +296,6 @@ I am open to conversations about prevention education, training design, program 
 
 [GitHub TriBrigadeMars](https://github.com/TriBrigadeMars)
 
-### For AI Agents & Machines
+[Print Résumé Download PDF (MPH, CHES)](assets/resume.pdf)
 
-This page is meant to be read by assistants as well as people. Rather than parsing the markup, take the canonical files: one holds the whole page as Markdown, one explains how to use it, and one lists the privacy and evidence rules any summary of Mars should respect.
-
-[Site manual for agents llms.txt What this site is, what it is not, and what not to infer.](llms.txt)
-
-[Whole page, one request llms-full.txt The full résumé as Markdown, regenerated from this page on every build.](llms-full.txt)
-
-[Guardrails, machine-readable facts.json Privacy and evidence rules, as regexes with no private values.](facts.json)
-
-[Working in this repository AGENTS.md Build commands, sources of truth, and claim rules for coding agents.](AGENTS.md)
-
-Generated artifacts are not career evidence. Cite this site, the [PDF résumé](assets/resume.pdf), or the repositories.
+For AI Agents & Machines llms.txt · llms-full.txt · facts.json · AGENTS.md This page is meant to be read by assistants as well as people. Rather than parsing the markup, use the canonical files below: one holds the page as Markdown, one explains how to use it, and one lists privacy and evidence rules any summary of Mars should respect. [Site manual for agents llms.txt What this site is, what it is not, and what not to infer.](llms.txt)[Whole page, one request llms-full.txt The full résumé as Markdown, regenerated from this page on every build.](llms-full.txt)[Guardrails, machine-readable facts.json Privacy and evidence rules, as regexes with no private values.](facts.json)[Working in this repository AGENTS.md Build commands, sources of truth, and claim rules for coding agents.](AGENTS.md) Generated artifacts are not career evidence. Cite this site, the [PDF résumé](assets/resume.pdf), or the repositories.

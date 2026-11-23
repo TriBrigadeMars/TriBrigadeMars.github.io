@@ -1,6 +1,4 @@
 import React, { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { Theme, type ThemeMode } from '@astryxdesign/core/theme';
-import { cuDenverBrandTheme } from '../styles/cu-denver-brand';
 
 type ResolvedColorMode = 'light' | 'dark';
 
@@ -19,9 +17,8 @@ export function useColorMode() {
 }
 
 export function ThemeShell({ children }: { children: ReactNode }) {
-  // Start with 'system' for SSR + hydration parity; the <head> anti-flash script
+  // Start with 'light' for SSR + hydration parity; the <head> anti-flash script
   // already sets class="dark" and data-theme on <html> before hydration.
-  const [themeMode, setThemeMode] = useState<ThemeMode>('system');
   const [resolvedMode, setResolvedMode] = useState<ResolvedColorMode>('light');
 
   useEffect(() => {
@@ -30,10 +27,9 @@ export function ThemeShell({ children }: { children: ReactNode }) {
     const isDark = stored === 'dark' || (!stored && prefersDark);
     const active: ResolvedColorMode = isDark ? 'dark' : 'light';
     setResolvedMode(active);
-    setThemeMode(stored === 'dark' || stored === 'light' ? stored : 'system');
     document.documentElement.classList.toggle('dark', isDark);
     document.documentElement.setAttribute('data-theme', active);
-    document.documentElement.setAttribute('data-astryx-theme', 'cu-denver-brand');
+    document.documentElement.setAttribute('data-astryx-theme', 'front-range-civic');
   }, []);
 
   const toggleMode = () => {
@@ -42,14 +38,11 @@ export function ThemeShell({ children }: { children: ReactNode }) {
     document.documentElement.classList.toggle('dark', next === 'dark');
     document.documentElement.setAttribute('data-theme', next);
     setResolvedMode(next);
-    setThemeMode(next);
   };
 
   return (
     <ColorModeContext.Provider value={{ mode: resolvedMode, toggleMode }}>
-      <Theme theme={cuDenverBrandTheme} mode={themeMode}>
-        {children}
-      </Theme>
+      <div data-astryx-theme="front-range-civic">{children}</div>
     </ColorModeContext.Provider>
   );
 }

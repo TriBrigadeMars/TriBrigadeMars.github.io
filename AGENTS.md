@@ -1,6 +1,6 @@
 # AGENTS.md — portfolio site
 
-Static portfolio for **Mars Cruz, MPH, CHES** (`index.html`, `education.html`, and `404.html`). Built with React 19, Vite, Meta Astryx (`@astryxdesign/core`), and Tailwind CSS, statically prerendered to root HTML files for GitHub Pages.
+Static portfolio for **Mars Cruz, MPH, CHES** (`index.html`, `education.html`, and `404.html`). Built with React 19, Vite, Front Range Civic design tokens (`src/theme/frontRangeTheme.ts` + `src/components/ui.tsx`), and Tailwind CSS, statically prerendered to root HTML files for GitHub Pages.
 
 Live site: https://tribrigademars.github.io/
 
@@ -11,7 +11,8 @@ Live site: https://tribrigademars.github.io/
 | `src/pages/HomePage.tsx` & `src/data/portfolio.ts` | Primary portfolio and résumé page source. |
 | `src/pages/EducationPage.tsx` & `src/data/education.ts` | Interactive Educational Initiatives & Curriculum Lab source. |
 | `src/pages/NotFoundPage.tsx` | Custom 404 page source. |
-| `src/theme/cuDenverBrandTheme.ts` | Meta Astryx `defineTheme` source (compiled via `npx astryx theme build`). |
+| `src/theme/frontRangeTheme.ts` & `src/styles/front-range-civic.css` | Front Range Civic design tokens and semantic CSS variables. |
+| `src/components/ui.tsx` | Lightweight WAI-ARIA UI primitives (`Badge`, `Button`, `Card`, `TabList`, `ZoomDialog`). |
 | `index.html`, `education.html`, `404.html` | Prerendered static HTML pages served by GitHub Pages. Do not edit by hand; run `npm run build`. |
 | `facts.json` | Privacy and evidence guardrails. Machine-checked rules, not prose. |
 | `llms.txt` | Hand-written manual for AI agents. Keep it true when sections change. |

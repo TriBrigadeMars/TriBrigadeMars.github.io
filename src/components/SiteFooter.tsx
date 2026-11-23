@@ -8,7 +8,7 @@ export function SiteFooter({ variant }: SiteFooterProps) {
   return (
     <footer className="border-t border-sandstone-200 dark:border-skyline-800 py-8 text-center text-sm text-ink-600 dark:text-ink-300">
       <p>
-        &copy; 2026 Mars Cruz, MPH, CHES. Built with React, Meta Astryx, and Tailwind CSS on GitHub Pages.
+        &copy; 2026 Mars Cruz, MPH, CHES. Built with React 19, Front Range Civic tokens, and Tailwind CSS on GitHub Pages.
       </p>
       <p className="mt-2 text-xs space-x-2">
         {variant === 'home' ? (
@@ -23,6 +23,14 @@ export function SiteFooter({ variant }: SiteFooterProps) {
         <span aria-hidden="true">&middot;</span>
         <a href="/llms.txt" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
           llms.txt
+        </a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="/llms-full.txt" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+          llms-full.txt
+        </a>
+        <span aria-hidden="true">&middot;</span>
+        <a href="/facts.json" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+          facts.json
         </a>
         <span aria-hidden="true">&middot;</span>
         <a href="/education.html" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline">

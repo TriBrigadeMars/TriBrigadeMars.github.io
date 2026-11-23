@@ -1,16 +1,21 @@
-import type { BadgeVariant } from '@astryxdesign/core/Badge';
+import type { BadgeVariant } from '../components/ui';
 
 export interface HeroPillar {
   title: string;
   description: string;
 }
 
+export type ProjectFilterGroup = 'public-health' | 'tooling';
+
 export interface ProjectCaseStudy {
   id: string;
+  filterGroup: ProjectFilterGroup;
+  isFlagship?: boolean;
   category: string;
   badgeVariant: BadgeVariant;
   originLabel: string;
   title: string;
+  summary: string;
   problem: string;
   roleApproach: string;
   verifiedOutcome: string;
@@ -18,6 +23,15 @@ export interface ProjectCaseStudy {
   ctaLabel: string;
   ctaHref: string;
   isExternal: boolean;
+}
+
+export interface LabPreviewCard {
+  src: string;
+  alt: string;
+  title: string;
+  caption: string;
+  href: string;
+  isSvg?: boolean;
 }
 
 export interface ExperienceItem {
@@ -47,12 +61,12 @@ export const HERO_PILLARS: HeroPillar[] = [
   {
     title: 'Compliance Education',
     description:
-      'Plain-language Title VII, Title IX & ADA/WCAG training curricula and tabletop exercises.',
+      'Plain-language Title VII, Title IX, and ADA/WCAG training curricula and tabletop exercises.',
   },
   {
     title: 'Evaluation & Analytics',
     description:
-      'CDC 6-step pre/post evaluation paired with SQL, Tableau & Excel compliance reporting.',
+      'CDC 6-step pre/post evaluation paired with SQL, Tableau, and Excel compliance reporting.',
   },
   {
     title: 'Local-First Tooling',
@@ -61,13 +75,42 @@ export const HERO_PILLARS: HeroPillar[] = [
   },
 ];
 
+export const LAB_PREVIEW_STRIP: LabPreviewCard[] = [
+  {
+    src: 'assets/education/fa-day1/thumbs/page-04.webp',
+    alt: 'Slide preview: Four Types of Workplace Conflict comparing Task, Process, Status, and Relationship conflict',
+    title: 'Student Services Day 1',
+    caption: 'Four Types of Workplace Conflict deck',
+    href: 'education.html#slide-decks',
+  },
+  {
+    src: 'assets/education/gdg-ai/thumbs/gdg-slide-05.webp',
+    alt: 'Slide preview: Case 1 Rebuilding a 52-page Canvas LMS prevention course',
+    title: 'GDG Denver AI for Good',
+    caption: '52-page Canvas course QA pipeline',
+    href: 'education.html#slide-decks',
+  },
+  {
+    src: 'assets/education/diagrams/five_ds_workplace.svg',
+    alt: 'Deterministic SVG diagram: The 5 Ds of bystander intervention in the workplace',
+    title: '5 Ds Pedagogical Model',
+    caption: 'Deterministic accessible SVG framework',
+    href: 'education.html#visual-frameworks',
+    isSvg: true,
+  },
+];
+
 export const PROJECTS: ProjectCaseStudy[] = [
   {
     id: 'title-vii-analytics',
+    filterGroup: 'public-health',
+    isFlagship: true,
     category: 'Compliance & Workforce Analytics',
     badgeVariant: 'teal',
     originLabel: 'University R1',
     title: 'Title VII Compliance Analytics & Reporting',
+    summary:
+      'Built recurring SQL reporting pipelines and Tableau compliance dashboards covering an academic and clinical community of over 22,000 members.',
     problem:
       'Campus leadership and outreach units needed timely visibility into training adherence and outreach gaps across an academic and clinical community of over 22,000 members.',
     roleApproach:
@@ -80,11 +123,56 @@ export const PROJECTS: ProjectCaseStudy[] = [
     isExternal: false,
   },
   {
+    id: 'titleix-policy-tracker',
+    filterGroup: 'public-health',
+    isFlagship: true,
+    category: 'Regulatory & Policy Informatics',
+    badgeVariant: 'teal',
+    originLabel: 'Work Sample',
+    title: 'Title IX & Civil Rights Policy Tracker',
+    summary:
+      'Dual-mode web and local offline statutory tracker enabling side-by-side comparison of proposed and enacted federal and state Title IX rules.',
+    problem:
+      'Researchers, advocates, and policy staff need to compare proposed and enacted federal and state Title IX rules across both connected and offline environments.',
+    roleApproach:
+      'Independent work sample engineered from one codebase as a hosted Next.js 15 and PostgreSQL web app and an offline desktop shell via embedded PGlite, Electron, and Rust/Tauri v2.',
+    verifiedOutcome:
+      'Supports dual web and local offline statutory comparison with local Unix-socket / PGlite storage; source repository published on GitHub.',
+    tags: ['Next.js 15', 'PostgreSQL / PGlite', 'Tauri v2 / Electron', 'Title IX'],
+    ctaLabel: 'View Repository',
+    ctaHref: 'https://github.com/TriBrigadeMars/titleix-policy-tracker',
+    isExternal: true,
+  },
+  {
+    id: 'gdg-denver-curriculum',
+    filterGroup: 'public-health',
+    isFlagship: true,
+    category: 'Public-Interest AI Literacy',
+    badgeVariant: 'yellow',
+    originLabel: 'Workshop Sample',
+    title: 'GDG Denver \u201cAI for Good\u201d Curriculum & QA Lab',
+    summary:
+      'Non-coder AI governance workshop documenting offline sandboxes, a 52-page Canvas LMS rebuild, a 6-step voice guard, and 3-critic visual audits.',
+    problem:
+      'Practitioners adopting AI tools without software backgrounds face risks of citation errors, accessibility gaps, and eroded educator voice.',
+    roleApproach:
+      'Independent workshop sample ("AI for Good, From a Non-Coder\'s Desk") detailing offline sandboxes, a 52-page Canvas LMS course rebuild, a 6-step voice guard, and 3-critic visual audits.',
+    verifiedOutcome:
+      'Documents stage-gated course QA, read-only file hygiene controls, and 12 annotated slide walkthroughs in the interactive Curriculum Lab.',
+    tags: ['Canvas LMS / IMSCC', '3-Critic QA', 'WCAG 2.2 AA', 'Public Sans'],
+    ctaLabel: 'Open Workshop Deck & Case Studies',
+    ctaHref: 'education.html#slide-decks',
+    isExternal: false,
+  },
+  {
     id: 'resume-tailor',
+    filterGroup: 'tooling',
     category: 'Data Governance & Plain Language',
     badgeVariant: 'blue',
     originLabel: 'Work Sample',
     title: 'Resume Tailor (Local AI Rewriter)',
+    summary:
+      'Offline desktop application using a local Ollama LLM to align structured writing against competency requirements without external cloud API uploads.',
     problem:
       'Sensitive career, personnel, and policy materials cannot be uploaded to external cloud AI APIs when adapting writing to plain-language standards.',
     roleApproach:
@@ -98,10 +186,13 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     id: 'android-kiosk',
+    filterGroup: 'tooling',
     category: 'Clinical Field & Device Controls',
     badgeVariant: 'purple',
     originLabel: 'Work Sample',
     title: 'Android Kiosk Lock Task App',
+    summary:
+      'Java Android SDK utility locking community health intake kiosks and screening tablets into approved single-purpose workflows via enterprise LockTask mode.',
     problem:
       'Community health intake kiosks, outpatient clinical screening tablets, and field survey stations risk tampering when devices remain unlocked to general OS apps.',
     roleApproach:
@@ -115,10 +206,13 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     id: 'hermes-profile-sync',
+    filterGroup: 'tooling',
     category: 'Workflow Standardization & Auditability',
     badgeVariant: 'yellow',
     originLabel: 'Work Sample',
     title: 'Hermes Agent Profile Sync',
+    summary:
+      'Python cross-environment synchronization utility tracking and aligning deterministic standard operating procedures across isolated workstations.',
     problem:
       'Cross-machine configuration drift undermines deterministic workflows and reproducible standard operating procedures (SOPs) across isolated workstations.',
     roleApproach:
@@ -131,28 +225,14 @@ export const PROJECTS: ProjectCaseStudy[] = [
     isExternal: true,
   },
   {
-    id: 'titleix-policy-tracker',
-    category: 'Regulatory & Policy Informatics',
-    badgeVariant: 'teal',
-    originLabel: 'Work Sample',
-    title: 'Title IX & Civil Rights Policy Tracker',
-    problem:
-      'Researchers, advocates, and policy staff need to compare proposed and enacted federal and state Title IX rules across both connected and offline environments.',
-    roleApproach:
-      'Independent work sample engineered from one codebase as a hosted Next.js 15 + PostgreSQL web app and an offline desktop shell via embedded PGlite, Electron, and Rust/Tauri v2.',
-    verifiedOutcome:
-      'Supports dual web and local offline statutory comparison with local Unix-socket / PGlite storage; source repository published on GitHub.',
-    tags: ['Next.js 15', 'PostgreSQL / PGlite', 'Tauri v2 / Electron', 'Title IX'],
-    ctaLabel: 'View Repository',
-    ctaHref: 'https://github.com/TriBrigadeMars/titleix-policy-tracker',
-    isExternal: true,
-  },
-  {
     id: 'office-equity-open-notebook',
+    filterGroup: 'tooling',
     category: 'Local-First Research & Policy RAG',
     badgeVariant: 'blue',
     originLabel: 'Work Sample',
     title: 'Office of Equity Open Notebook',
+    summary:
+      'Zero-Docker Windows Electron installer bundling Python 3.12, Node.js, SurrealDB, and Docling for local-model policy synthesis.',
     problem:
       'Non-technical staff cannot rely on Docker setup when synthesizing public research and policy guides using local LLMs.',
     roleApproach:
@@ -166,10 +246,13 @@ export const PROJECTS: ProjectCaseStudy[] = [
   },
   {
     id: 't3-code-master-config',
+    filterGroup: 'tooling',
     category: 'Agentic QA & Environment Sync',
     badgeVariant: 'purple',
     originLabel: 'Work Sample',
     title: 'T3 Code Master Config & Multi-Harness QA',
+    summary:
+      'Secret-free configuration synchronization and dry-run merge pipeline maintaining parity across six local and CLI agent harnesses.',
     problem:
       'Synchronizing multiple AI harnesses and local models risks configuration skew or leaking secrets and local session databases.',
     roleApproach:
@@ -180,23 +263,6 @@ export const PROJECTS: ProjectCaseStudy[] = [
     ctaLabel: 'View Repository',
     ctaHref: 'https://github.com/TriBrigadeMars/t3-code-master-config',
     isExternal: true,
-  },
-  {
-    id: 'gdg-denver-curriculum',
-    category: 'Public-Interest AI Literacy',
-    badgeVariant: 'yellow',
-    originLabel: 'Workshop Sample',
-    title: 'GDG Denver \u201cAI for Good\u201d Curriculum & QA Lab',
-    problem:
-      'Practitioners adopting AI tools without software backgrounds face risks of citation errors, accessibility gaps, and eroded educator voice.',
-    roleApproach:
-      'Independent workshop sample ("AI for Good, From a Non-Coder\'s Desk") detailing offline sandboxes, a 52-page Canvas LMS course rebuild, a 6-step voice guard, and 3-critic visual audits.',
-    verifiedOutcome:
-      'Documents stage-gated course QA, read-only file hygiene controls, and 12 annotated slide walkthroughs in the interactive Curriculum Lab.',
-    tags: ['Canvas LMS / IMSCC', '3-Critic QA', 'WCAG 2.2 AA', 'Public Sans'],
-    ctaLabel: 'Open Workshop Deck & Case Studies',
-    ctaHref: 'education.html#slide-decks',
-    isExternal: false,
   },
 ];
 
@@ -401,7 +467,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     title: 'Applied Technical & Local AI Work Samples',
-    dotClass: 'bg-sunset',
+    dotClass: 'bg-terracotta',
     skills: [
       'Ollama & Local LLMs',
       'Python',

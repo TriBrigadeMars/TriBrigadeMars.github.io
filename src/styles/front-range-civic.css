@@ -1,0 +1,100 @@
+/* Front Range Civic semantic CSS custom properties */
+:root,
+[data-astryx-theme="front-range-civic"] {
+  color-scheme: light;
+  --font-family-display: "Barlow Condensed", "Public Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-body: "Public Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-code: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+
+  --color-background-body: #FAF8F3;
+  --color-background-surface: #FFFFFF;
+  --color-background-card: #FAF8F3;
+  --color-background-muted: #EFE9DC;
+  --color-background-popover: #FFFFFF;
+
+  --color-text-primary: #1B2428;
+  --color-text-secondary: #525C61;
+
+  --color-accent: #1B5E63;
+  --color-accent-hover: #154D52;
+  --color-accent-muted: #D8ECEE;
+  --color-on-accent: #FFFFFF;
+  --color-text-accent: #1B5E63;
+
+  --color-gold-accent: #C8A24A;
+  --color-gold-text: #7A5C18;
+  --color-gold-surface: #F5EEDB;
+  --color-gold-border: #C8A24A;
+
+  --color-border: #DFD5C0;
+  --color-border-emphasized: #C8A24A;
+  --color-terracotta: #C4533A;
+
+  --color-badge-teal-bg: #D8ECEE;
+  --color-badge-teal-fg: #154D52;
+  --color-badge-teal-border: #1B5E63;
+
+  --color-badge-yellow-bg: #F5EEDB;
+  --color-badge-yellow-fg: #634910;
+  --color-badge-yellow-border: #C8A24A;
+
+  --color-badge-blue-bg: #DAE6EA;
+  --color-badge-blue-fg: #1F4350;
+  --color-badge-blue-border: #275260;
+
+  --color-badge-purple-bg: #EDE7F3;
+  --color-badge-purple-fg: #4B2B63;
+  --color-badge-purple-border: #8C6AA8;
+
+  --color-badge-neutral-bg: #EFE9DC;
+  --color-badge-neutral-fg: #333D42;
+  --color-badge-neutral-border: #DFD5C0;
+}
+
+html.dark,
+html.dark [data-astryx-theme="front-range-civic"] {
+  color-scheme: dark;
+  --color-background-body: #121E24;
+  --color-background-surface: #17313B;
+  --color-background-card: #17313B;
+  --color-background-muted: #121E24;
+  --color-background-popover: #17313B;
+
+  --color-text-primary: #FAF8F3;
+  --color-text-secondary: #C4CED2;
+
+  --color-accent: #6EC4C9;
+  --color-accent-hover: #8FD4D8;
+  --color-accent-muted: #1F4350;
+  --color-on-accent: #121E24;
+  --color-text-accent: #6EC4C9;
+
+  --color-gold-accent: #DEC484;
+  --color-gold-text: #DEC484;
+  --color-gold-surface: #2F2612;
+  --color-gold-border: #C8A24A;
+
+  --color-border: #275260;
+  --color-border-emphasized: #DEC484;
+  --color-terracotta: #E87451;
+
+  --color-badge-teal-bg: #17313B;
+  --color-badge-teal-fg: #D8ECEE;
+  --color-badge-teal-border: #6EC4C9;
+
+  --color-badge-yellow-bg: #2F2612;
+  --color-badge-yellow-fg: #F5EEDB;
+  --color-badge-yellow-border: #C8A24A;
+
+  --color-badge-blue-bg: #17313B;
+  --color-badge-blue-fg: #DAE6EA;
+  --color-badge-blue-border: #6EC4C9;
+
+  --color-badge-purple-bg: #2B2038;
+  --color-badge-purple-fg: #E6D9F2;
+  --color-badge-purple-border: #A88AC4;
+
+  --color-badge-neutral-bg: #1F4350;
+  --color-badge-neutral-fg: #FAF8F3;
+  --color-badge-neutral-border: #275260;
+}
