@@ -72,6 +72,14 @@ body {
   font-family: var(--font-family-body);
   background-color: var(--color-background-body);
   color: var(--color-text-primary);
+  overflow-wrap: break-word;
+}
+
+/* Headings are the only content long enough to outgrow a 320px column at 200% text. */
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
 }
 
 /* Native <dialog> backdrop styling */
@@ -112,5 +120,152 @@ dialog.fr-dialog::backdrop {
   }
   .fr-stage-fade {
     transition: opacity 150ms ease;
+  }
+}
+
+/*
+ * Print: the site doubles as a résumé, so "Save as PDF" must produce a clean
+ * document instead of the interactive page. Interactive chrome is removed with
+ * Tailwind's `print:hidden` in the components; everything below is typography,
+ * colour flattening, and print-only link annotation.
+ */
+@media print {
+  @page {
+    margin: 0.5in;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  /* Direct printing from dark mode: browsers drop backgrounds but keep light text.
+     `#root` outranks Tailwind's `.dark\:…` utilities, which carry two class selectors. */
+  html.dark #root,
+  html.dark #root *,
+  html.dark body[class] {
+    background-color: transparent !important;
+    color: #111 !important;
+    border-color: #bbb !important;
+    box-shadow: none !important;
+  }
+
+  body {
+    font-size: 10pt;
+    line-height: 1.3;
+  }
+
+  main {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  nav,
+  footer {
+    display: none !important;
+  }
+
+  section {
+    margin-bottom: 14pt !important;
+  }
+
+  h1 {
+    font-size: 20pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  h2 {
+    font-size: 12pt !important;
+    border-bottom: 1px solid #999 !important;
+    padding-bottom: 2pt !important;
+    margin-bottom: 6pt !important;
+  }
+
+  h3 {
+    font-size: 11pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #111 !important;
+    break-after: avoid;
+  }
+
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Card chrome adds nothing on paper. */
+  [class*='rounded'],
+  .fr-card-hover {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  #about .grid,
+  #projects .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Keep each role on one page; grid cards must stay splittable or Chrome gives each
+     row a page of its own. */
+  #experience .space-y-12 > div {
+    break-inside: avoid;
+  }
+
+  #education,
+  #contact {
+    break-inside: avoid;
+  }
+
+  #experience .space-y-12 > div + div {
+    margin-top: 10pt !important;
+  }
+
+  #experience .space-y-12 > div > ul > li + li {
+    margin-top: 2pt !important;
+  }
+
+  /* Cards print as compact list rows rather than padded screen cards. */
+  #projects .grid,
+  #skills .grid,
+  #education .grid,
+  #contact .grid {
+    gap: 6pt !important;
+  }
+
+  #projects .grid > div {
+    padding: 6pt 0 !important;
+    border-width: 0 0 1px !important;
+  }
+
+  #skills .grid > div,
+  #education .grid > div,
+  #contact .grid > div {
+    padding: 6pt 8pt !important;
+  }
+
+  /* Small-caps labels print tight instead of letter-spaced across the line. */
+  [class*='tracking-'] {
+    letter-spacing: 0.03em !important;
+  }
+
+  a {
+    color: #111 !important;
+    text-decoration: none;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 8pt;
+    color: #444 !important;
+    overflow-wrap: anywhere;
   }
 }

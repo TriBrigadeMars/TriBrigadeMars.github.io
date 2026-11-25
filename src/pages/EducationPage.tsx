@@ -120,7 +120,7 @@ export function EducationPage() {
       <div className="min-h-screen bg-alabaster text-ink-900 dark:bg-ink-950 dark:text-sandstone-50 transition-colors duration-200">
         <SiteHeader variant="education" maxWidthClass="max-w-5xl" />
 
-        <main id="main-content" className="max-w-5xl mx-auto px-4 py-12">
+        <main id="main-content" tabIndex={-1} className="max-w-5xl mx-auto px-4 py-12 focus:outline-none">
           {/* Section 1: Hero & Curriculum Philosophy */}
           <section id="overview" className="mb-16" aria-labelledby="overview-heading">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-gold-100 text-gold-700 dark:bg-gold-700/30 dark:text-gold-300 border border-gold-300 dark:border-gold-600/50 mb-4 tracking-[0.06em]">
@@ -161,7 +161,7 @@ export function EducationPage() {
             {/* Progressive Disclosure: Statutory Context + Reviewable Self-Audit Details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <details className="rounded-xl border border-sandstone-200 dark:border-skyline-800 bg-white dark:bg-skyline-800/40 p-4">
-                <summary className="cursor-pointer text-xs font-bold uppercase tracking-[0.12em] text-gold-600 dark:text-gold-300 focus:outline-none">
+                <summary className="cursor-pointer text-xs font-bold uppercase tracking-[0.12em] text-gold-600 dark:text-gold-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded">
                   Statutory Scope, Pedagogy &amp; Psychometric Methodology
                 </summary>
                 <p className="text-sm text-ink-700 dark:text-ink-300 leading-relaxed mt-3 pt-3 border-t border-sandstone-200 dark:border-skyline-700">
@@ -173,7 +173,7 @@ export function EducationPage() {
                 id="audit-evidence"
                 className="rounded-xl border border-sandstone-200 dark:border-skyline-800 bg-white dark:bg-skyline-800/40 p-4"
               >
-                <summary className="cursor-pointer text-xs font-bold uppercase tracking-[0.12em] text-teal-700 dark:text-teal-300 focus:outline-none">
+                <summary className="cursor-pointer text-xs font-bold uppercase tracking-[0.12em] text-teal-700 dark:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded">
                   Accessibility &amp; Citation Self-Audit Scope, Method &amp; Known Limits
                 </summary>
                 <dl className="text-sm text-ink-700 dark:text-ink-300 space-y-2 mt-3 pt-3 border-t border-sandstone-200 dark:border-skyline-700 leading-relaxed">
@@ -360,7 +360,7 @@ export function EducationPage() {
 
                 {/* Accessible HTML Transcript Disclosure for Non-Text Slide Content */}
                 <details className="rounded-lg border border-sandstone-200 dark:border-skyline-700 bg-sandstone-50 dark:bg-ink-950 p-3">
-                  <summary className="cursor-pointer text-xs font-semibold text-teal-700 dark:text-teal-300 focus:outline-none">
+                  <summary className="cursor-pointer text-xs font-semibold text-teal-700 dark:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded">
                     Accessible HTML Slide Transcript
                   </summary>
                   <div className="mt-2 pt-2 border-t border-sandstone-200 dark:border-skyline-800 text-xs text-ink-700 dark:text-ink-300 space-y-1.5 leading-relaxed">

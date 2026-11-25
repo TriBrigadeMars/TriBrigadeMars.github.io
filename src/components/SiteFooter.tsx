@@ -12,28 +12,28 @@ export function SiteFooter({ variant }: SiteFooterProps) {
       </p>
       <p className="mt-2 text-xs space-x-2">
         {variant === 'home' ? (
-          <a href="#ai" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+          <a href="#ai" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline rounded focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300">
             For AI agents
           </a>
         ) : (
-          <a href="/" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+          <a href="/" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline rounded focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300">
             Main Portfolio
           </a>
         )}
         <span aria-hidden="true">&middot;</span>
-        <a href="/llms.txt" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+        <a href="/llms.txt" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline rounded focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300">
           llms.txt
         </a>
         <span aria-hidden="true">&middot;</span>
-        <a href="/llms-full.txt" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+        <a href="/llms-full.txt" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline rounded focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300">
           llms-full.txt
         </a>
         <span aria-hidden="true">&middot;</span>
-        <a href="/facts.json" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+        <a href="/facts.json" className="font-mono hover:text-teal-700 dark:hover:text-teal-300 hover:underline rounded focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300">
           facts.json
         </a>
         <span aria-hidden="true">&middot;</span>
-        <a href="/education.html" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline">
+        <a href="/education.html" className="hover:text-teal-700 dark:hover:text-teal-300 hover:underline rounded focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300">
           Curriculum Lab
         </a>
       </p>

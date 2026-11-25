@@ -9,9 +9,11 @@ Live site: https://tribrigademars.github.io/
 | File | Role |
 | --- | --- |
 | `src/pages/HomePage.tsx` & `src/data/portfolio.ts` | Primary portfolio and résumé page source. |
+| `src/data/resumeJson.ts` | JSON Résumé export derived from `portfolio.ts`; add no copy here. |
 | `src/pages/EducationPage.tsx` & `src/data/education.ts` | Interactive Educational Initiatives & Curriculum Lab source. |
 | `src/pages/NotFoundPage.tsx` | Custom 404 page source. |
 | `src/theme/frontRangeTheme.ts` & `src/styles/front-range-civic.css` | Front Range Civic design tokens and semantic CSS variables. |
+| `src/styles/brand.css` | Component classes, reduced-motion rules, and the `@media print` résumé stylesheet. |
 | `src/components/ui.tsx` | Lightweight WAI-ARIA UI primitives (`Badge`, `Button`, `Card`, `TabList`, `ZoomDialog`). |
 | `index.html`, `education.html`, `404.html` | Prerendered static HTML pages served by GitHub Pages. Do not edit by hand; run `npm run build`. |
 | `facts.json` | Privacy and evidence guardrails. Machine-checked rules, not prose. |

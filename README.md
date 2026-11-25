@@ -143,3 +143,14 @@ CI job is what verifies it.
   `A11Y_EXECUTABLE_PATH` at a Chromium binary, and use `A11Y_CHANNEL=msedge` to
   force Edge.
 - **`npm run preview` says port in use** — `npm run preview -- --port 4174`.
+
+## Print and machine-readable résumé
+
+- **Print / Save as PDF** — the button in the hero (or `Ctrl`/`Cmd` + `P`) prints a plain résumé:
+  navigation, portrait, filter controls and the agent disclosure are dropped, dark mode is flattened to
+  ink on white, external links print with their URLs, and experience roles stay on one page. Styles live
+  in the `@media print` block of `src/styles/brand.css`; elements are removed with Tailwind's `print:hidden`.
+- **JSON Résumé** — `src/data/resumeJson.ts` builds a [JSON Resume](https://jsonresume.org/) document from
+  `src/data/portfolio.ts`, so the export cannot drift from the page. The build embeds it as
+  `<script type="application/json" id="resume-json">`, and the contact section downloads it as
+  `mars-cruz-resume.json`.

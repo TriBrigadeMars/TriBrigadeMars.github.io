@@ -110,9 +110,9 @@ export function SiteHeader({
         className="border-b border-sandstone-200 dark:border-skyline-800 sticky top-0 bg-alabaster/95 dark:bg-ink-950/95 backdrop-blur z-40"
         aria-label="Primary"
       >
-        <div className={`${maxWidthClass} mx-auto px-4 py-3.5 flex items-center justify-between gap-3`}>
+        <div className={`${maxWidthClass} mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-2`}>
           {/* Brand identity */}
-          <div className="flex items-center gap-2.5 shrink-0">
+          <div className="flex min-w-0 items-center gap-2.5">
             {variant === 'education' && (
               <>
                 <a
@@ -128,16 +128,16 @@ export function SiteHeader({
             )}
             <a
               href={brandHref}
-              className="font-display text-xl sm:text-2xl font-bold tracking-wide text-ink-900 dark:text-sandstone-50 flex items-center gap-2 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded"
+              className="font-display text-xl sm:text-2xl font-bold tracking-wide text-ink-900 dark:text-sandstone-50 flex min-w-0 items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded"
             >
-              <span>Mars Cruz</span>
+              <span className="truncate">Mars Cruz</span>
               <Badge variant="yellow" label={badgeText} className="hidden sm:inline-flex whitespace-nowrap" />
             </a>
           </div>
 
           {/* Desktop single-row navigation */}
-          <div className="hidden md:flex items-center gap-4">
-            <ul className="flex items-center gap-x-3.5 lg:gap-x-4 text-xs lg:text-sm font-medium text-ink-700 dark:text-ink-300">
+          <div className="hidden md:flex flex-wrap items-center justify-end gap-4">
+            <ul className="flex flex-wrap items-center gap-x-3.5 lg:gap-x-4 text-xs lg:text-sm font-medium text-ink-700 dark:text-ink-300">
               {navLinks.map((item) => {
                 const isActive = item.href.startsWith('#') && item.href.slice(1) === activeSectionId;
                 return (
@@ -184,11 +184,11 @@ export function SiteHeader({
           </div>
 
           {/* Mobile Combo Navigation: High-priority destination + Theme Toggle + Labeled Menu button */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden flex-wrap items-center justify-end gap-2">
             {variant === 'home' && (
               <a
                 href="education.html"
-                className="fr-btn-primary px-2.5 py-2 rounded-lg text-xs font-semibold transition-colors min-h-[40px] inline-flex items-center whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300"
+                className="fr-btn-primary px-2.5 py-2 rounded-lg text-xs font-semibold transition-colors min-h-[40px] hidden min-[360px]:inline-flex items-center whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300"
               >
                 Curriculum Lab
               </a>
