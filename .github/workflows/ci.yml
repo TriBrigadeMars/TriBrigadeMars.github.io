@@ -1,0 +1,126 @@
+name: Site checks
+
+# This repository is published by GitHub Pages in "legacy" mode straight from
+# `main` / root: the committed index.html, education.html, 404.html and
+# assets/app/* ARE the deployable site. So CI never deploys and never pushes —
+# it proves that what is committed builds, that the generated output on disk
+# matches the source, and that the result passes the quality gates. Publishing
+# stays exactly as it is: a push to `main` is deployed by Pages.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  quality:
+    name: quality (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      # `npm run build` / `npm run check` run Python checker scripts through
+      # scripts/py.mjs, which finds python3 / python / py -3 whichever exists.
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build (client + SSR + prerender + llms-full.txt)
+        run: npm run build
+
+      - name: Facts and machine-readable layer
+        run: npm run check
+
+      - name: Links, anchors, a11y structure, metadata, sitemap
+        run: npm run check:html
+
+      - name: Gate self-tests
+        run: npm test
+
+      # The committed HTML/bundles must equal a fresh build, otherwise Pages is
+      # serving stale output. Bundle hashes are normalised, so this is stable
+      # across machines. Run on one OS only: Windows path handling is covered by
+      # the build and checks above, and a single canonical comparison avoids
+      # duplicate reports for the same drift.
+      - name: Committed build output is current
+        if: runner.os == 'Linux'
+        run: npm run check:artifacts
+
+      - name: Upload built site
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v7
+        with:
+          name: site-build
+          path: |
+            index.html
+            education.html
+            404.html
+            llms-full.txt
+            assets/app
+          if-no-files-found: error
+          retention-days: 7
+
+  a11y:
+    name: accessibility (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # Linux runners have no browser; Windows runners already ship Chrome (the
+      # script also falls back to Edge there). Both paths are exercised.
+      - name: Install Chrome
+        if: runner.os == 'Linux'
+        id: chrome
+        uses: browser-actions/setup-chrome@v2
+
+      - name: axe-core WCAG 2.2 A/AA (light + dark)
+        run: npm run a11y
+        env:
+          A11Y_EXECUTABLE_PATH: ${{ runner.os == 'Linux' && steps.chrome.outputs.chrome-path || '' }}
