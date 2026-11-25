@@ -119,6 +119,8 @@ jobs:
         if: runner.os == 'Linux'
         id: chrome
         uses: browser-actions/setup-chrome@v2
+        with:
+          install-dependencies: true
 
       - name: axe-core WCAG 2.2 A/AA (light + dark)
         run: npm run a11y
