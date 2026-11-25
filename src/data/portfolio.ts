@@ -38,8 +38,47 @@ export interface ExperienceItem {
   title: string;
   period: string;
   isCurrent?: boolean;
-  meta: string;
+  organization: string;
+  employmentType?: string;
+  location?: string;
   bullets: Array<{ before?: string; strong?: string; after?: string }>;
+}
+
+export interface Basics {
+  name: string;
+  eyebrow: string;
+  headline: string;
+  summary: string;
+  location: string;
+  email: string;
+  siteUrl: string;
+  linkedinUrl: string;
+  linkedinHandle: string;
+  githubUrl: string;
+  githubHandle: string;
+  resumePdf: string;
+}
+
+export const BASICS: Basics = {
+  name: 'Mars Cruz, MPH, CHES',
+  eyebrow: 'Public Health & Applied Informatics',
+  headline:
+    'Public Health Educator \u00b7 Program Implementation and Evaluation \u00b7 Community Partnerships',
+  summary:
+    'Public health educator and program coordinator with 8+ years of experience translating regulatory compliance and prevention science into plain-language training and measurable operations.',
+  location: 'Denver, CO (Remote & Hybrid)',
+  email: 'nalcs.mika@gmail.com',
+  siteUrl: 'https://tribrigademars.github.io/',
+  linkedinUrl: 'https://www.linkedin.com/in/mars-cruz-6099b930a/',
+  linkedinHandle: 'mars-cruz-6099b930a',
+  githubUrl: 'https://github.com/TriBrigadeMars',
+  githubHandle: 'TriBrigadeMars',
+  resumePdf: 'assets/resume.pdf',
+};
+
+/** "Employer · Employment type · Location", exactly as the résumé renders it. */
+export function experienceMeta(role: ExperienceItem): string {
+  return [role.organization, role.employmentType, role.location].filter(Boolean).join(' \u00b7 ');
 }
 
 export interface SkillGroup {
@@ -51,6 +90,7 @@ export interface SkillGroup {
 export interface EducationItem {
   badge: string;
   badgeVariant: BadgeVariant;
+  kind: 'degree' | 'credential';
   degree: string;
   field: string;
   fieldHighlight?: boolean;
@@ -271,7 +311,9 @@ export const EXPERIENCES: ExperienceItem[] = [
     title: 'Prevention, Education, and Outreach (PEO) Coordinator',
     period: 'September 2024 — Present',
     isCurrent: true,
-    meta: 'University of Colorado · Full-Time (40 hr/week) · Denver, CO',
+    organization: 'University of Colorado',
+    employmentType: 'Full-Time (40 hr/week)',
+    location: 'Denver, CO',
     bullets: [
       {
         before:
@@ -298,7 +340,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     title: 'Political Outreach Consultant',
     period: 'July 2024 — September 2024',
-    meta: 'Valley Forward · Part-Time (24 hr/week)',
+    organization: 'Valley Forward',
+    employmentType: 'Part-Time (24 hr/week)',
     bullets: [
       {
         before:
@@ -317,7 +360,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     title: 'Senior Program Coordinator',
     period: 'October 2023 — May 2024',
-    meta: 'Youth Leadership Institute · Full-Time (40 hr/week)',
+    organization: 'Youth Leadership Institute',
+    employmentType: 'Full-Time (40 hr/week)',
     bullets: [
       {
         before:
@@ -349,7 +393,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     title: 'Community Health Worker',
     period: 'March 2023 — October 2023',
-    meta: 'Centro La Familia Advocacy Services · Full-Time (36.5 hr/week)',
+    organization: 'Centro La Familia Advocacy Services',
+    employmentType: 'Full-Time (36.5 hr/week)',
     bullets: [
       {
         before:
@@ -364,7 +409,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     title: 'Health Education Specialist',
     period: 'January 2022 — February 2023',
-    meta: 'Merced County Department of Public Health · Full-Time (40 hr/week)',
+    organization: 'Merced County Department of Public Health',
+    employmentType: 'Full-Time (40 hr/week)',
     bullets: [
       {
         before:
@@ -383,7 +429,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     title: 'Communicable Disease Investigator',
     period: 'October 2020 — December 2021',
-    meta: 'Fresno County Department of Public Health · Full-Time (40 hr/week)',
+    organization: 'Fresno County Department of Public Health',
+    employmentType: 'Full-Time (40 hr/week)',
     bullets: [
       {
         before:
@@ -398,7 +445,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     title: 'Program Coordinator',
     period: 'August 2017 — October 2020',
-    meta: 'Fresno Barrios Unidos · Full-Time (40 hr/week)',
+    organization: 'Fresno Barrios Unidos',
+    employmentType: 'Full-Time (40 hr/week)',
     bullets: [
       {
         before:
@@ -486,6 +534,7 @@ export const EDUCATIONS: EducationItem[] = [
   {
     badge: 'Graduate Degree',
     badgeVariant: 'yellow',
+    kind: 'degree',
     degree: 'Master of Public Health (MPH)',
     field: 'Health Promotion & Health Education',
     fieldHighlight: true,
@@ -494,6 +543,7 @@ export const EDUCATIONS: EducationItem[] = [
   {
     badge: 'Undergraduate Degree',
     badgeVariant: 'neutral',
+    kind: 'degree',
     degree: 'Bachelor of Science (BS)',
     field: 'Health Science \u2014 Community Health Option',
     institution: 'California State University Fresno',
@@ -501,6 +551,7 @@ export const EDUCATIONS: EducationItem[] = [
   {
     badge: 'National Credential',
     badgeVariant: 'teal',
+    kind: 'credential',
     degree: 'Certified Health Education Specialist',
     field: 'CHES · NCHEC',
     fieldHighlight: true,

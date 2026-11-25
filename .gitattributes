@@ -1,0 +1,15 @@
+# Keep line endings identical on Linux and Windows. The prerendered HTML and
+# bundle files are generated with LF; with Git's Windows default
+# (core.autocrlf=true) a checkout would hold CRLF and every build would show the
+# generated files as modified.
+* text=auto eol=lf
+
+# Binary assets: never convert or merge textually.
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.pdf binary
+*.png binary
+*.webp binary
+*.woff binary
+*.woff2 binary

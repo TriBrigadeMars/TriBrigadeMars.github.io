@@ -1,3 +1,7 @@
 node_modules/
 dist/
 .vite-ssr/
+
+# Python bytecode from running scripts/check_facts.py or scripts/build_llms.py directly
+__pycache__/
+*.py[cod]

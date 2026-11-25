@@ -3,19 +3,31 @@
   "version": "1.0.0",
   "private": true,
   "description": "Mars Cruz portfolio site built with React 19, Vite, Meta Astryx, and Tailwind CSS",
+  "engines": {
+    "node": ">=20.19"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vite build --ssr src/entries/prerender.tsx --outDir .vite-ssr && node scripts/prerender.mjs && python scripts/build_llms.py",
-    "build:llms": "python scripts/build_llms.py",
-    "check": "python scripts/check_facts.py . && python scripts/build_llms.py --check",
-    "typecheck": "tsc --noEmit"
+    "build": "vite build && vite build --ssr src/entries/prerender.tsx --outDir .vite-ssr && node scripts/prerender.mjs && node scripts/py.mjs scripts/build_llms.py",
+    "build:llms": "node scripts/py.mjs scripts/build_llms.py",
+    "check": "node scripts/py.mjs scripts/check_facts.py . && node scripts/py.mjs scripts/build_llms.py --check",
+    "check:html": "node scripts/check_html.mjs",
+    "check:artifacts": "node scripts/check_artifacts.mjs",
+    "a11y": "node scripts/a11y.mjs",
+    "test": "node --test \"scripts/**/*.test.mjs\"",
+    "typecheck": "tsc --noEmit",
+    "preview": "node scripts/serve.mjs",
+    "verify": "npm run typecheck && npm run build && npm run check && npm run check:html && npm run check:artifacts && npm test"
   },
   "devDependencies": {
     "@astryxdesign/cli": "^0.7.17",
+    "@axe-core/playwright": "^4.14.1",
+    "@types/node": "^26.6.10",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
     "autoprefixer": "^10.7.0",
+    "playwright-core": "^1.65.1",
     "postcss": "^8.5.33",
     "tailwindcss": "^3.4.17",
     "typescript": "^7.0.2",

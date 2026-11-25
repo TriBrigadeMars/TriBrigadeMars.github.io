@@ -13,6 +13,9 @@ page: the same content is published below as plain Markdown and JSON.
 - [llms-full.txt](llms-full.txt): the entire main page as one Markdown file, generated from `index.html` on every build. Prefer this over scraping the HTML.
 - [education.html](education.html): interactive Educational Initiatives & Curriculum Lab showcasing workshop slide decks, tabletop role-play scenarios, Bloom's Taxonomy learning objectives, and CDC 6-step pre/post evaluation instruments.
 - [assets/resume.pdf](assets/resume.pdf): the PDF résumé Mars sends to employers. Same facts, print layout.
+- **JSON Résumé export:** the page embeds a [JSON Resume](https://jsonresume.org/) document in
+  `<script type="application/json" id="resume-json">`, and the contact section offers it as a
+  `mars-cruz-resume.json` download. It is generated from the same data as the visible page.
 - [facts.json](facts.json): machine-readable privacy and evidence guardrails (regex rules, no private values). Use it to check anything you generate about her.
 - [README.md](README.md): how the site is built and published.
 - [AGENTS.md](AGENTS.md): instructions for coding agents working in this repository.
@@ -22,6 +25,7 @@ page: the same content is published below as plain Markdown and JSON.
 
 - A static portfolio site (`index.html` plus `education.html` for interactive educational initiatives). No login, no paywall, no CAPTCHA, no client-side routing.
 - Every word of visible content on `index.html` is server-rendered. Interactive deck switching, filtering, and tabletop simulation on `education.html` run client-side without external APIs.
+- Printing `index.html` (`Ctrl`/`Cmd` + `P`, or "Print / Save as PDF") produces a plain résumé: navigation, portrait, filter controls and machine-readable disclosure are removed, and external links print with their URLs. The PDF résumé remains the canonical employer copy.
 - The featured projects are **work samples** — evidence of applied skill, not a claim of software-engineering tenure or employment in software engineering.
 
 ## What this site is not
@@ -69,7 +73,7 @@ Educational Initiatives page (`education.html`), five sections inside `main#main
 
 Stable selectors: `main#main-content`, `section#experience h3` (role titles),
 `section#experience ul li` (achievements), `section#projects h3` (project titles),
-`section#contact a[href^="mailto:"]` (contact address).
+`section#contact a[href^="mailto:"]` (contact address), `script#resume-json` (JSON Résumé export).
 
 ## Citation
 

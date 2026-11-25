@@ -5,16 +5,33 @@ import { SiteHeader } from '../components/SiteHeader';
 import { SiteFooter } from '../components/SiteFooter';
 import {
   AI_FILES,
+  BASICS,
   EDUCATIONS,
   EXPERIENCES,
   HERO_PILLARS,
   LAB_PREVIEW_STRIP,
   PROJECTS,
   SKILL_GROUPS,
+  experienceMeta,
   type ProjectCaseStudy,
 } from '../data/portfolio';
+import { downloadResumeJson, serializeResumeJson } from '../data/resumeJson';
 
 type ProjectFilter = 'all' | 'public-health' | 'tooling';
+
+const PROJECT_FILTERS: Array<{ key: ProjectFilter; label: string; count: number }> = [
+  { key: 'all', label: 'All Work', count: PROJECTS.length },
+  {
+    key: 'public-health',
+    label: 'Public Health & Compliance',
+    count: PROJECTS.filter((p) => p.filterGroup === 'public-health').length,
+  },
+  {
+    key: 'tooling',
+    label: 'Local-First AI & Field Tooling',
+    count: PROJECTS.filter((p) => p.filterGroup === 'tooling').length,
+  },
+];
 
 function GitHubIcon({ className = 'w-4 h-4 fill-current' }: { className?: string }) {
   return (
@@ -41,7 +58,7 @@ function SectionHeading({ id, title }: { id: string; title: string }) {
 function HeroTopoBackdrop() {
   return (
     <svg
-      className="pointer-events-none absolute -top-6 right-0 w-full max-w-2xl h-80 text-gold-500 opacity-[0.07] dark:opacity-[0.1]"
+      className="pointer-events-none absolute -top-6 right-0 w-full max-w-2xl h-80 text-gold-500 opacity-[0.07] dark:opacity-[0.1] print:hidden"
       viewBox="0 0 600 320"
       fill="none"
       aria-hidden="true"
@@ -74,7 +91,7 @@ function ProjectCard({ proj }: { proj: ProjectCaseStudy }) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div className="md:col-span-5 flex flex-col justify-between h-full">
             <div>
-              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3 print:hidden">
                 <Badge variant={proj.badgeVariant} label={proj.category} />
                 <span className="text-xs font-mono font-medium text-ink-600 dark:text-ink-300">
                   Featured · {proj.originLabel}
@@ -89,7 +106,7 @@ function ProjectCard({ proj }: { proj: ProjectCaseStudy }) {
             </div>
 
             <div>
-              <div className="flex flex-wrap gap-1.5 mb-4">
+              <div className="flex flex-wrap gap-1.5 mb-4 print:hidden">
                 {proj.tags.map((tag) => (
                   <span
                     key={tag}
@@ -113,7 +130,7 @@ function ProjectCard({ proj }: { proj: ProjectCaseStudy }) {
             </div>
           </div>
 
-          <dl className="md:col-span-7 space-y-3 text-sm md:text-base md:border-l md:border-sandstone-200 dark:md:border-skyline-700/80 md:pl-6">
+          <dl className="md:col-span-7 space-y-3 text-sm md:text-base md:border-l md:border-sandstone-200 dark:md:border-skyline-700/80 md:pl-6 print:hidden">
             <div>
               <dt className="text-xs font-bold uppercase tracking-[0.14em] text-gold-600 dark:text-gold-300 mb-0.5">
                 Problem:
@@ -145,7 +162,7 @@ function ProjectCard({ proj }: { proj: ProjectCaseStudy }) {
   return (
     <Card className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 hover:border-gold-500 dark:hover:border-gold-300 rounded-xl p-6 shadow-sm flex flex-col justify-between bg-white dark:bg-skyline-800/40">
       <div>
-        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-3 print:hidden">
           <Badge variant={proj.badgeVariant} label={proj.category} />
           <span className="text-xs font-mono font-medium text-ink-600 dark:text-ink-300">
             {proj.originLabel}
@@ -160,8 +177,8 @@ function ProjectCard({ proj }: { proj: ProjectCaseStudy }) {
           {proj.summary}
         </p>
 
-        <details className="group mb-5 rounded-lg border border-sandstone-200 dark:border-skyline-700 bg-sandstone-50/80 dark:bg-ink-950/60 px-3.5 py-2.5">
-          <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.12em] text-ink-700 dark:text-ink-300 hover:text-teal-700 dark:hover:text-teal-300 focus:outline-none">
+        <details className="group mb-5 rounded-lg border border-sandstone-200 dark:border-skyline-700 bg-sandstone-50/80 dark:bg-ink-950/60 px-3.5 py-2.5 print:hidden">
+          <summary className="cursor-pointer text-xs font-semibold uppercase tracking-[0.12em] text-ink-700 dark:text-ink-300 hover:text-teal-700 dark:hover:text-teal-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded">
             Case Study Details (Problem, Approach &amp; Outcome)
           </summary>
           <dl className="space-y-2.5 text-sm md:text-[15px] mt-3 pt-2.5 border-t border-sandstone-200 dark:border-skyline-800">
@@ -190,7 +207,7 @@ function ProjectCard({ proj }: { proj: ProjectCaseStudy }) {
           </dl>
         </details>
 
-        <div className="flex flex-wrap gap-1.5 mb-5">
+        <div className="flex flex-wrap gap-1.5 mb-5 print:hidden">
           {proj.tags.map((tag) => (
             <span
               key={tag}
@@ -228,10 +245,9 @@ export function HomePage() {
   const sampleProjects = filteredProjects.filter((p) => !p.isFlagship);
 
   function handleCopyEmail() {
-    const email = 'nalcs.mika@gmail.com';
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
-        .writeText(email)
+        .writeText(BASICS.email)
         .then(() => {
           setEmailCopyStatus('Email copied to clipboard.');
           window.setTimeout(() => setEmailCopyStatus(''), 2500);
@@ -240,7 +256,7 @@ export function HomePage() {
           setEmailCopyStatus('Copy blocked — select address to copy.');
         });
     } else {
-      setEmailCopyStatus('Select nalcs.mika@gmail.com to copy.');
+      setEmailCopyStatus(`Select ${BASICS.email} to copy.`);
     }
   }
 
@@ -249,7 +265,7 @@ export function HomePage() {
       <div className="min-h-screen bg-alabaster text-ink-900 dark:bg-ink-950 dark:text-sandstone-50 transition-colors duration-200">
         <SiteHeader variant="home" maxWidthClass="max-w-4xl" />
 
-        <main id="main-content" className="max-w-4xl mx-auto px-4 py-12">
+        <main id="main-content" tabIndex={-1} className="max-w-4xl mx-auto px-4 py-12 focus:outline-none">
           {/* Hero / About Section */}
           <section id="about" className="relative mb-20" aria-labelledby="about-heading">
             <HeroTopoBackdrop />
@@ -260,33 +276,33 @@ export function HomePage() {
                   <svg className="w-2.5 h-2.5 text-gold-600 dark:text-gold-300 shrink-0" viewBox="0 0 12 10" fill="currentColor" aria-hidden="true">
                     <polygon points="6,0 12,10 0,10" />
                   </svg>
-                  <span>Public Health &amp; Applied Informatics</span>
+                  <span>{BASICS.eyebrow}</span>
                 </div>
 
                 <h1
                   id="about-heading"
                   className="font-display text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-3 text-ink-900 dark:text-sandstone-50"
                 >
-                  Mars Cruz, MPH, CHES
+                  {BASICS.name}
                 </h1>
 
                 <p className="text-lg md:text-xl text-ink-900 dark:text-sandstone-50 font-semibold mb-4 border-l-4 border-gold-500 pl-3.5">
-                  Public Health Educator &middot; Program Implementation and Evaluation &middot; Community Partnerships
+                  {BASICS.headline}
                 </p>
 
                 <div className="text-sm text-ink-600 dark:text-ink-300 mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-                  <span>Denver, CO (Remote &amp; Hybrid)</span>
+                  <span>{BASICS.location}</span>
                   <span aria-hidden="true">&middot;</span>
                   <a
-                    href="mailto:nalcs.mika@gmail.com"
+                    href={`mailto:${BASICS.email}`}
                     className="text-teal-700 dark:text-teal-300 hover:underline font-medium"
                   >
-                    nalcs.mika@gmail.com
+                    {BASICS.email}
                   </a>
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="px-2.5 py-0.5 rounded border border-sandstone-200 dark:border-skyline-700 bg-white dark:bg-skyline-800 text-xs font-semibold text-ink-700 dark:text-sandstone-100 hover:border-gold-500 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors"
+                    className="px-2.5 py-0.5 rounded border border-sandstone-200 dark:border-skyline-700 bg-white dark:bg-skyline-800 text-xs font-semibold text-ink-700 dark:text-sandstone-100 hover:border-gold-500 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors print:hidden"
                   >
                     Copy email
                   </button>
@@ -296,16 +312,16 @@ export function HomePage() {
                 </div>
 
                 <p className="text-base md:text-lg text-ink-700 dark:text-sandstone-100 leading-relaxed max-w-2xl">
-                  Public health educator and program coordinator with 8+ years of experience translating regulatory compliance and prevention science into plain-language training and measurable operations.
+                  {BASICS.summary}
                 </p>
               </div>
 
-              <div className="md:col-span-4 flex justify-start md:justify-end">
+              <div className="md:col-span-4 flex justify-start md:justify-end print:hidden">
                 <figure className="angle-frame max-w-[240px] sm:max-w-[260px] w-full">
                   <div className="relative z-10 rounded-xl overflow-hidden border-2 border-sandstone-200 dark:border-skyline-700 bg-white dark:bg-skyline-800 shadow-md">
                     <img
                       src="assets/mars-cruz-portrait.webp"
-                      alt="Portrait of Mars Cruz, MPH, CHES, wearing glasses and a dark patterned button-up shirt in an office setting"
+                      alt={`Portrait of ${BASICS.name}, wearing glasses and a dark patterned button-up shirt in an office setting`}
                       width={560}
                       height={608}
                       fetchPriority="high"
@@ -313,7 +329,7 @@ export function HomePage() {
                     />
                     <figcaption className="px-3 py-2 bg-white dark:bg-skyline-900 border-t border-sandstone-200 dark:border-skyline-700 flex items-center justify-between gap-2">
                       <span className="text-xs font-semibold text-ink-900 dark:text-sandstone-50">
-                        Mars Cruz, MPH, CHES
+                        {BASICS.name}
                       </span>
                       <span aria-hidden="true" className="text-sandstone-200 dark:text-skyline-700">·</span>
                       <span className="text-xs font-mono text-gold-600 dark:text-gold-300">
@@ -325,7 +341,7 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 print:hidden">
               {HERO_PILLARS.map((pillar) => (
                 <Card
                   key={pillar.title}
@@ -341,7 +357,7 @@ export function HomePage() {
               ))}
             </div>
 
-            <div className="relative z-10 flex flex-wrap items-center gap-3">
+            <div className="relative z-10 flex flex-wrap items-center gap-3 print:hidden">
               <Button
                 label="Interactive Curriculum Lab →"
                 variant="primary"
@@ -358,15 +374,21 @@ export function HomePage() {
                 label="View Resume (PDF)"
                 variant="secondary"
                 size="lg"
-                href="assets/resume.pdf"
+                href={BASICS.resumePdf}
                 target="_blank"
                 rel="noopener"
+              />
+              <Button
+                label="Print / Save as PDF"
+                variant="secondary"
+                size="lg"
+                onClick={() => window.print()}
               />
               <Button
                 label="GitHub"
                 variant="ghost"
                 size="lg"
-                href="https://github.com/TriBrigadeMars"
+                href={BASICS.githubUrl}
                 target="_blank"
                 rel="noopener"
                 icon={<GitHubIcon className="w-4 h-4 fill-current" />}
@@ -384,7 +406,7 @@ export function HomePage() {
             </div>
 
             {/* Featured Interactive Curriculum Lab Banner */}
-            <Card className="mb-10 border-2 border-gold-500/80 dark:border-gold-500/60 rounded-2xl p-6 md:p-8 bg-white dark:bg-skyline-800/50 shadow-sm">
+            <Card className="mb-10 border-2 border-gold-500/80 dark:border-gold-500/60 rounded-2xl p-6 md:p-8 bg-white dark:bg-skyline-800/50 shadow-sm print:hidden">
               <div className="angle-divider mb-5 rounded-full" aria-hidden="true" />
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <Badge
@@ -458,13 +480,9 @@ export function HomePage() {
             </Card>
 
             {/* Category Filter Controls */}
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6 print:hidden">
               <div className="flex flex-wrap gap-2" role="group" aria-label="Filter projects by focus area">
-                {[
-                  { key: 'all' as const, label: 'All Work (8)' },
-                  { key: 'public-health' as const, label: 'Public Health & Compliance (3)' },
-                  { key: 'tooling' as const, label: 'Local-First AI & Field Tooling (5)' },
-                ].map((tab) => {
+                {PROJECT_FILTERS.map((tab) => {
                   const active = projectFilter === tab.key;
                   return (
                     <button
@@ -478,7 +496,7 @@ export function HomePage() {
                           : 'bg-white dark:bg-skyline-800/50 text-ink-700 dark:text-ink-300 border border-sandstone-200 dark:border-skyline-700 hover:border-gold-500'
                       }`}
                     >
-                      {tab.label}
+                      {tab.label} ({tab.count})
                     </button>
                   );
                 })}
@@ -548,7 +566,7 @@ export function HomePage() {
                     </span>
                   </div>
                   <p className="text-sm text-ink-600 dark:text-ink-300 mb-4 font-medium">
-                    {role.meta}
+                    {experienceMeta(role)}
                   </p>
                   <ul className="list-disc list-outside ml-4 text-ink-700 dark:text-ink-300 space-y-2.5 text-base leading-relaxed">
                     {role.bullets.map((b, idx) => (
@@ -641,7 +659,7 @@ export function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 rounded-xl p-4 bg-white dark:bg-skyline-800/40 flex items-center justify-between gap-3 hover:border-gold-500 dark:hover:border-gold-300">
                 <a
-                  href="mailto:nalcs.mika@gmail.com"
+                  href={`mailto:${BASICS.email}`}
                   className="flex items-center gap-3 min-w-0 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded"
                 >
                   <div className="w-10 h-10 shrink-0 rounded-lg bg-teal-100 dark:bg-skyline-700 flex items-center justify-center text-teal-700 dark:text-teal-300">
@@ -657,21 +675,21 @@ export function HomePage() {
                   <div className="min-w-0">
                     <p className="text-xs text-ink-600 dark:text-ink-300">Direct Email</p>
                     <p className="text-sm font-semibold text-teal-700 dark:text-teal-300 truncate hover:underline">
-                      nalcs.mika@gmail.com
+                      {BASICS.email}
                     </p>
                   </div>
                 </a>
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="shrink-0 px-3 py-1.5 rounded-lg border border-sandstone-200 dark:border-skyline-700 bg-sandstone-50 dark:bg-ink-950 text-xs font-semibold text-ink-900 dark:text-sandstone-50 hover:border-gold-500 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors"
+                  className="shrink-0 px-3 py-1.5 rounded-lg border border-sandstone-200 dark:border-skyline-700 bg-sandstone-50 dark:bg-ink-950 text-xs font-semibold text-ink-900 dark:text-sandstone-50 hover:border-gold-500 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 transition-colors print:hidden"
                 >
                   Copy
                 </button>
               </div>
 
               <a
-                href="https://www.linkedin.com/in/mars-cruz-6099b930a/"
+                href={BASICS.linkedinUrl}
                 target="_blank"
                 rel="noopener"
                 className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 rounded-xl p-4 bg-white dark:bg-skyline-800/40 flex items-center gap-3 hover:border-gold-500 dark:hover:border-gold-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300"
@@ -684,13 +702,13 @@ export function HomePage() {
                 <div>
                   <p className="text-xs text-ink-600 dark:text-ink-300">LinkedIn Profile</p>
                   <p className="text-sm font-semibold text-ink-900 dark:text-sandstone-50">
-                    mars-cruz-6099b930a
+                    {BASICS.linkedinHandle}
                   </p>
                 </div>
               </a>
 
               <a
-                href="https://github.com/TriBrigadeMars"
+                href={BASICS.githubUrl}
                 target="_blank"
                 rel="noopener"
                 className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 rounded-xl p-4 bg-white dark:bg-skyline-800/40 flex items-center gap-3 hover:border-gold-500 dark:hover:border-gold-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300"
@@ -701,16 +719,16 @@ export function HomePage() {
                 <div>
                   <p className="text-xs text-ink-600 dark:text-ink-300">GitHub</p>
                   <p className="text-sm font-semibold text-ink-900 dark:text-sandstone-50">
-                    TriBrigadeMars
+                    {BASICS.githubHandle}
                   </p>
                 </div>
               </a>
 
               <a
-                href="assets/resume.pdf"
+                href={BASICS.resumePdf}
                 target="_blank"
                 rel="noopener"
-                className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 rounded-xl p-4 bg-white dark:bg-skyline-800/40 flex items-center gap-3 hover:border-gold-500 dark:hover:border-gold-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300"
+                className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 rounded-xl p-4 bg-white dark:bg-skyline-800/40 flex items-center gap-3 hover:border-gold-500 dark:hover:border-gold-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 print:hidden"
               >
                 <div className="w-10 h-10 shrink-0 rounded-lg bg-gold-100 dark:bg-gold-700/30 flex items-center justify-center text-gold-700 dark:text-gold-300">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -729,13 +747,36 @@ export function HomePage() {
                   </p>
                 </div>
               </a>
+
+              <button
+                type="button"
+                onClick={downloadResumeJson}
+                className="fr-card-hover border border-sandstone-200 dark:border-skyline-800 rounded-xl p-4 bg-white dark:bg-skyline-800/40 flex items-center gap-3 text-left hover:border-gold-500 dark:hover:border-gold-300 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 print:hidden"
+              >
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-teal-100 dark:bg-skyline-700 flex items-center justify-center text-teal-700 dark:text-teal-300">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-xs text-ink-600 dark:text-ink-300">Machine-Readable Résumé</p>
+                  <p className="text-sm font-semibold text-ink-900 dark:text-sandstone-50">
+                    Download JSON (JSON Resume)
+                  </p>
+                </div>
+              </button>
             </div>
           </section>
 
           {/* Subordinated Machine-Readable Disclosure Band */}
-          <section id="ai" className="mb-8" aria-labelledby="ai-heading">
+          <section id="ai" className="mb-8 print:hidden" aria-labelledby="ai-heading">
             <details className="rounded-xl border border-sandstone-200 dark:border-skyline-800 bg-white dark:bg-skyline-800/30 p-5">
-              <summary className="cursor-pointer flex flex-wrap items-center justify-between gap-2 focus:outline-none">
+              <summary className="cursor-pointer flex flex-wrap items-center justify-between gap-2 focus:outline-none focus:ring-2 focus:ring-teal-600 dark:focus:ring-teal-300 rounded">
                 <div className="flex items-center gap-3">
                   <span className="angle-slash" aria-hidden="true" />
                   <h2
@@ -773,7 +814,7 @@ export function HomePage() {
 
                 <p className="text-xs text-ink-600 dark:text-ink-300 mt-4">
                   Generated artifacts are not career evidence. Cite this site, the{' '}
-                  <a href="assets/resume.pdf" className="text-teal-700 dark:text-teal-300 hover:underline font-medium">
+                  <a href={BASICS.resumePdf} className="text-teal-700 dark:text-teal-300 hover:underline font-medium">
                     PDF r&eacute;sum&eacute;
                   </a>
                   , or the repositories.
@@ -784,6 +825,13 @@ export function HomePage() {
         </main>
 
         <SiteFooter variant="home" />
+
+        {/* JSON Resume mirror of the page data, for tools and assistants that prefer structured input. */}
+        <script
+          type="application/json"
+          id="resume-json"
+          dangerouslySetInnerHTML={{ __html: serializeResumeJson() }}
+        />
       </div>
     </ThemeShell>
   );

@@ -40,6 +40,19 @@ export function ThemeShell({ children }: { children: ReactNode }) {
     setResolvedMode(next);
   };
 
+  // Print on white paper: drop the dark class (and restore it afterwards) so text
+  // stays ink-on-white even when the visitor prints straight from dark mode.
+  useEffect(() => {
+    const flatten = () => document.documentElement.classList.remove('dark');
+    const restore = () => document.documentElement.classList.toggle('dark', resolvedMode === 'dark');
+    window.addEventListener('beforeprint', flatten);
+    window.addEventListener('afterprint', restore);
+    return () => {
+      window.removeEventListener('beforeprint', flatten);
+      window.removeEventListener('afterprint', restore);
+    };
+  }, [resolvedMode]);
+
   return (
     <ColorModeContext.Provider value={{ mode: resolvedMode, toggleMode }}>
       <div data-astryx-theme="front-range-civic">{children}</div>
