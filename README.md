@@ -75,7 +75,9 @@ npm run preview
 
 `check:html` reports some non-blocking warnings: descriptions or titles over the
 recommended length, `<img>` without `width`/`height`, `og:image:alt` absence,
-bundles over 250 kB.
+bundles over 250 kB. Bump `<lastmod>` in `sitemap.xml` when a page's visible
+content changes; the gate verifies the date is real, not in the future, and that
+every public page is listed exactly once.
 
 ## Publishing
 

@@ -63,6 +63,7 @@ async function launchBrowser() {
 const { browser, label } = await launchBrowser();
 const site = await createSiteServer({ root: ROOT, quiet: true });
 const violations = [];
+const pageErrors = [];
 let incomplete = 0;
 
 console.log(`Accessibility check — ${site.url} (${label})`);
@@ -80,6 +81,7 @@ try {
 
     for (const route of ROUTES) {
       const page = await context.newPage();
+      page.on('pageerror', (error) => pageErrors.push({ route, scheme, message: error.message }));
       await page.goto(`${site.url}${route}`, { waitUntil: 'load', timeout: 30000 }).catch((error) => {
         console.log(`⚠ ${route}: page load warned: ${error.message.split('\n')[0]}`);
       });
@@ -99,6 +101,16 @@ try {
 } finally {
   await browser.close();
   await site.close();
+}
+
+// A hydration crash still renders the prerendered HTML, so axe can pass while
+// the page is broken. Treat uncaught errors as failures.
+if (pageErrors.length > 0) {
+  console.log(`\n${pageErrors.length} uncaught browser error(s) (hydration/JavaScript):`);
+  for (const { route, scheme, message } of pageErrors.slice(0, 10)) {
+    console.log(`  ✗ ${route} (${scheme}): ${message.split('\n')[0]}`);
+  }
+  process.exit(1);
 }
 
 if (violations.length > 0) {
