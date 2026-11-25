@@ -14,7 +14,7 @@
     "check:html": "node scripts/check_html.mjs",
     "check:artifacts": "node scripts/check_artifacts.mjs",
     "a11y": "node scripts/a11y.mjs",
-    "test": "node --test scripts/",
+    "test": "node --test \"scripts/**/*.test.mjs\"",
     "typecheck": "tsc --noEmit",
     "preview": "node scripts/serve.mjs",
     "verify": "npm run typecheck && npm run build && npm run check && npm run check:html && npm run check:artifacts && npm test"
