@@ -75,3 +75,77 @@ Everything ranked ✅ (1–9), nothing under `src/` — page content, components
 lane `site-product`. Generated root HTML/`assets/app` are only regenerated from the current source
 so the committed artifact matches the toolchain; no factual text changes. Deploy stays on
 GitHub Pages legacy branch publishing; CI never pushes.
+
+## 5. Verification (commands actually run, Linux only)
+
+```
+$ npm ci
+added 235 packages, and audited 236 packages in 8s          # 0 vulnerabilities after npm audit fix
+
+$ npm run typecheck
+tsc --noEmit                                                # exit 0 (was exit 1 before @types/node)
+
+$ npm run build
+✓ 28 modules transformed.
+✓ built in 887ms
+✓ prerendered index.html / education.html / 404.html
+✓ wrote llms-full.txt (301 lines)                           # exit 0
+
+$ npm run check
+✓ PASS — all privacy and evidence facts hold
+✓ PASS — llms.txt manifest and llms-full.txt are current     # exit 0
+
+$ npm run check:html
+· 404.html         17 links ·  0 images · 0 error(s)
+· education.html   18 links · 22 images · 0 error(s)
+· index.html       50 links ·  4 images · 0 error(s)
+✓ PASS — 3 pages, links, anchors, a11y structure, metadata, sitemap and robots are consistent (8 warning(s))
+
+$ npm test
+ℹ tests 13  ℹ pass 13  ℹ fail 0
+
+$ npm run check:artifacts
+✓ PASS — committed pages, assets/app/ bundles and llms-full.txt match a fresh build
+
+$ npm run a11y
+  ✓ /                light 0 violation(s)   ✓ /                dark 0 violation(s)
+  ✓ /education.html  light 0 violation(s)   ✓ /education.html  dark 0 violation(s)
+  ✓ /404.html        light 0 violation(s)   ✓ /404.html        dark 0 violation(s)
+✓ PASS — no axe WCAG 2.2 A/AA violations on 3 pages × 2 colour schemes
+
+$ npm run verify            # the whole chain above, exit 0, working tree clean afterwards
+```
+
+Served the built site with `npm run preview -- --port 4399` and fetched it:
+
+```
+GET /                    200  text/html  96,234 B  <title>Mars Cruz, MPH, CHES | Public Health &amp; AI Portfolio  (1 <h1>)
+GET /education.html      200  text/html  95,430 B  <title>Educational Initiatives & Interactive Curriculum Lab | ... (1 <h1>)
+GET /missing-page        404  text/html  custom  404.html ("Page Not Found (404) | Mars Cruz, MPH, CHES")
+GET /education           200  extensionless route → education.html
+HEAD /assets/resume.pdf  200  application/pdf  8,040 B
+GET /assets/app/index-C4VGhUXu.js  200 text/javascript 47,121 B
+GET /sitemap.xml /llms.txt /llms-full.txt /robots.txt /facts.json /favicon.ico  all 200
+GET /../../etc/passwd    404  (path traversal refused)
+```
+
+Cross-platform proof available locally: with `python` replaced by a failing stub (the Debian/Ubuntu
+situation), `python scripts/check_facts.py .` exits 127, while `npm run check` now passes because
+`scripts/py.mjs` resolves `python3`. Build reproducibility was checked with Node 22 (fresh `npm ci`)
+and Node 26 at two different checkout paths: identical bundle bytes and hashes.
+
+**Not verified:** Windows execution. The `windows-latest` CI jobs are the first real run there.
+
+## 6. Integration notes for the lead
+
+- The committed build output (`index.html`, `education.html`, `404.html`, `assets/app/`,
+  `llms-full.txt`) was regenerated in its own commit. If lane `site-product` changes `src/`, that
+  commit will conflict; drop it and re-run `npm run build` on the merged tree, then
+  `npm run check:artifacts` must pass.
+- `npm run check:artifacts` depends on Node + lockfile stability. A Node or dependency upgrade can
+  change bundle bytes; the fix is always "rebuild and commit", which the failure message says.
+- The eight remaining `check:html` warnings are content decisions owned by `site-product`
+  (`og:image:alt`, `width`/`height` on images, 181-char education description, 75-char education
+  title). They do not fail the gate.
+- CI has no deploy step by design. Publishing remains Pages legacy `main` / root; a push is the deploy.
+
