@@ -39,7 +39,7 @@ function realPython() {
 test('runs a script with an auto-detected interpreter', () => {
   const result = spawnSync(process.execPath, [LAUNCHER, tempScript()], { encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /hello-from-python\n3/);
+  assert.match(result.stdout, /hello-from-python\r?\n3/);
 });
 
 test('honours the PYTHON override', (t) => {
