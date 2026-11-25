@@ -23,14 +23,28 @@ Live site: https://tribrigademars.github.io/
 ## Commands
 
 ```bash
-npm install          # first time only
+npm ci               # reproducible install from the lockfile (npm install only when changing deps)
 npm run build        # build Vite client + SSR, prerender root HTML, regenerate llms-full.txt
 npm run check        # facts.json rules + llms freshness
 npm run typecheck    # TypeScript check
+npm run check:html   # links/anchors, a11y structure, meta, sitemap, robots
+npm run check:artifacts  # committed build output must match a fresh build
+npm test             # self-tests for the two static gates
+npm run a11y         # axe WCAG 2.2 A/AA in a real browser (light + dark); needs Chrome/Edge
+npm run preview      # serve the built site like GitHub Pages (http://127.0.0.1:4173)
+npm run verify       # typecheck + build + check + check:html + check:artifacts + test
 npm run dev          # local Vite dev server (serve src/templates/*.html)
 ```
 
-Run `npm run build` after editing `src/` files, and `npm run check` before committing.
+Run `npm run build` after editing `src/` files, `npm run verify` before committing,
+and commit the regenerated `index.html`, `education.html`, `404.html`,
+`assets/app/` and `llms-full.txt` together with the source change. GitHub Pages
+publishes this branch directly, so uncommitted build output is a stale live site —
+`npm run check:artifacts` and the Ubuntu CI job exist to catch that.
+
+`build`/`check` call Python through `scripts/py.mjs`, which resolves `python3`,
+`python` or `py -3` (Windows) and requires Python 3.9+. Do not call `python`
+directly from a script.
 
 ## Claim rules
 
